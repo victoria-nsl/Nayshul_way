@@ -1,0 +1,42 @@
+.travel-europe__image-block {
+  width: 21%;
+  padding: 185px 23% 486px 56%;
+  margin: 0 auto;
+  background-color: $blue-background;
+  background-image: url("../img/travel-europe-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/travel-europe-desktop@2x.jpg");
+  }
+}
+
+.travel-europe__title {
+  width: 412px;
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 80px;
+  letter-spacing: -0.466667px;
+  color: $white;
+}
+
+.travel-europe__text-block {
+  margin-top: -486px;
+  margin-bottom: 486px;
+  padding-left: 56%;
+}
+
+.travel-europe__description {
+  width: 376px;
+  margin: 0;
+  margin-bottom: 33px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  color: $white;
+  letter-spacing: -0.466667px;
+}

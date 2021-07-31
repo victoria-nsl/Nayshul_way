@@ -1,0 +1,121 @@
+.countries {
+  width: 1170px;
+  padding: 0 375px;
+  margin: 0 auto;
+}
+
+//Кнопки
+.countries__slider-buttons {
+  width: 900px;
+  padding-bottom: 15px;
+  margin-bottom: 65px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba($dark, 0.3);
+}
+
+.countries__slider-button {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.415px;
+  color: rgba($dark, 0.3);
+
+  border: none;
+  background-color: transparent;
+}
+
+.countries__slider-button--current {
+  color: $scarlet;
+}
+
+//Слайды
+.countries__slider-item {
+  display: none;
+}
+
+.countries__slider-item--current {
+  display: block;
+}
+
+.countries__slider-item-wrapper {
+  display: flex;
+}
+
+.countries__description-block {
+  width: 320px;
+}
+
+.countries__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 90px;
+  letter-spacing: -1.245px;
+  color: $dark;
+}
+
+.countries__description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.466667px;
+  color: rgba($dark, 0.7);
+}
+
+.countries__image-feedback-block {
+  width: 785px;
+}
+
+.countries__feedback-block {
+  position: relative;
+  z-index: 2;
+
+  width: 382px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  margin-top: -482px;
+  margin-bottom: 300px;
+  margin-left: 318px;
+
+  background-color: $white;
+  text-align: start;
+
+  outline: 5px solid rgba(0, 255, 0, 0.5);
+  outline-offset: -5px;
+}
+
+.countries__feedback-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  letter-spacing: -0.691667px;
+  color: $dark;
+}
+
+.countries__feedback-wrapper {
+  margin: 0;
+}
+
+.countries__feedback-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: -0.408333px;
+  color: rgba($dark, 0.7);
+}
+
+.countries__feedback-author {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.466667px;
+  color: $dark;
+}

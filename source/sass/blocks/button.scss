@@ -1,0 +1,58 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $scarlet;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: $orange;
+}
+
+.button--travel-europe {
+  display: flex;
+  align-items: center;
+  width: 340px;
+  padding: 30px 40px 30px 40px;
+  box-sizing: border-box;
+}
+
+.button--travel-europe::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-left: 122px;
+  background-image: url("../img/icon-arrow-right.svg");
+  background-repeat: no-repeat;
+}
+
+.button--countries {
+  width: 250px;
+  padding: 30px 40px 30px 39px;
+  box-sizing: border-box;
+}
+
+
+.button--prices {
+  width: 310px;
+  padding: 30px 70px 30px 69px;
+  box-sizing: border-box;
+}
+
+
+.button--questions {
+  width: 176px;
+  padding: 18px 39px 17px 40px;
+  box-sizing: border-box;
+}
