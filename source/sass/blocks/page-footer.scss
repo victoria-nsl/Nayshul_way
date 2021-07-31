@@ -1,5 +1,46 @@
 .page-footer {
-  width: 1160px;
-  padding: 0 375px;
+  width: 1161px;
+  padding: 74px 26px 74px 15px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: $tablet-max-width) {
+    width: 95%;
+    padding: 54px 21px 54px 21px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    width: 90%;
+    padding: 0 16px 26px 16px;
+  }
+}
+
+.page-footer__next-trips {
+  @media (max-width: $tablet-max-width) {
+    width: 54%;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    width: 100%;
+  }
+}
+
+.page-footer__contacts {
+  @media (max-width: $tablet-max-width) {
+    width: 39%;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    width: 100%;
+  }
+}
+
+.page-footer__corporate-travelers {
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+  }
 }

@@ -1,0 +1,85 @@
+.next-trips {
+  position: relative;
+
+  @media (max-width: $tablet-max-width) {
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    text-align: center;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $grey;
+  }
+}
+
+.next-trips ::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 1px;
+  height: 189px;
+  background-color: $grey;
+
+  @media (max-width: $tablet-max-width) {
+    height: 177px;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    display: none;
+  }
+}
+
+.next-trips__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  color: $darkest;
+}
+
+.next-trips__list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobil-max-width) {
+    justify-content: space-between;
+  }
+}
+
+.next-trips__list {
+  width: 129px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 32%;
+  }
+
+  @media (max-width: $mobil-max-width) {
+    width: 47%;
+  }
+}
+
+.next-trips__list:last-child {
+  @media (max-width: $mobil-max-width) {
+    width: 100%;
+  }
+}
+
+.next-trips__list:not(:last-child) {
+  @media (max-width: $mobil-max-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.next-trips__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.next-trips__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba($darkest, 0.5);
+}

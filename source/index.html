@@ -13,8 +13,11 @@
   <body class="page-body">
     <header class="page-header page-body__header">
       <a class="page-header__logo-link">
-        <source media="(max-width: 1169px)" srcset="img/logotype-tablet.svg">
-        <img src="img/logotype-desktop.svg" width="57" height="22" alt="Логотип сайта туристического агентства Way">
+        <picture>
+          <source media="(max-width: 1169px)" srcset="img/logotype-tablet.svg">
+          <img src="img/logotype-desktop.svg" width="57" height="22" alt="Логотип сайта туристического агентства Way">
+        </picture>
+
       </a>
       <nav class="main-navigation main-navigation--closed main-navigation--nojs page-header__main-navigation">
         <button class="main-navigation__toggle" type="button">
@@ -510,68 +513,72 @@
         <h2 class="next-trips__title">
           Следующие путешествия
         </h2>
-        <ul class="next-trips__list">
-          <li class="next-trips__item">
-            <a href="#">Марсель</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Ним</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Монпелье</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Барселона</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Пальма</a>
-          </li>
-        </ul>
-        <ul class="next-trips__list">
-          <li class="next-trips__item">
-            <a href="#">Сардиния</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Палермо</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Катания</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Неаполь</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Рим</a>
-          </li>
-        </ul>
-        <ul class="next-trips__list">
-          <li class="next-trips__item">
-            <a href="#">Корс</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Ницца</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Монако</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Динь-ле-Бен</a>
-          </li>
-          <li class="next-trips__item">
-            <a href="#">Гренобль</a>
-          </li>
-        </ul>
+        <div class="next-trips__list-wrapper">
+          <ul class="next-trips__list">
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Марсель</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Ним</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Монпелье</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Барселона</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Пальма</a>
+            </li>
+          </ul>
+          <ul class="next-trips__list">
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Сардиния</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Палермо</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Катания</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Неаполь</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Рим</a>
+            </li>
+          </ul>
+          <ul class="next-trips__list">
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Корс</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Ницца</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Монако</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Динь-ле-Бен</a>
+            </li>
+            <li class="next-trips__item">
+              <a class="next-trips__link" href="#">Гренобль</a>
+            </li>
+          </ul>
+        </div>
       </section>
       <section class="contacts page-footer__contacts">
         <h2 class="contacts__title">
           Наши контакты
         </h2>
-        <a class="contacts__email-link" href="mailto:puteshestviemechta@gmail.ru" aria-label="Отправить email туристическому агентству Way">
-          puteshestviemechta@gmail.ru
-        </a>
-        <a class="contacts__phone-link" href="tel:+749978468446" aria-label="Позвонить по номеру туристического агентства Way">
-          +7 (499) -784-684-46
-        </a>
+        <div class="contacts__links">
+          <a class="contacts__link contacts__link--email" href="mailto:puteshestviemechta@gmail.ru" aria-label="Отправить email туристическому агентству Way">
+            puteshestviemechta@gmail.ru
+          </a>
+          <a class="contacts__link contacts__link--phone" href="tel:+749978468446" aria-label="Позвонить по номеру туристического агентства Way">
+            +7 (499) -784-684-46
+          </a>
+        </div>
       </section>
       <section class="corporate-travelers page-footer__corporate-travelers">
         <h2 class="corporate-travelers__title" >
