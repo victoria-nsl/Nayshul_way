@@ -12,6 +12,12 @@
   background-color: $scarlet;
   border: none;
   cursor: pointer;
+
+  @media (max-width: $tablet-max-width) {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
 
 .button:hover {
@@ -24,6 +30,16 @@
   width: 340px;
   padding: 30px 40px 30px 40px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-max-width) {
+    width: 250px;
+    padding: 19px 40px 19px 40px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+  }
 }
 
 .button--travel-europe::after {
@@ -35,12 +51,28 @@
   margin-left: 122px;
   background-image: url("../img/icon-arrow-right.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $tablet-max-width) {
+    margin-left: 51px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-left: 89px;
+  }
 }
 
 .button--countries {
   width: 250px;
   padding: 30px 40px 30px 39px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 19px 52px 19px 52px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+  }
 }
 
 
@@ -48,6 +80,11 @@
   width: 310px;
   padding: 30px 70px 30px 69px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-max-width) {
+    width: 288px;
+    padding: 19px 71px 19px 72px;
+  }
 }
 
 
@@ -55,4 +92,14 @@
   width: 176px;
   padding: 18px 39px 17px 40px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-max-width) {
+    width: 250px;
+    padding: 19px 84px 19px 84px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+    padding: 19px 103px 19px 103px;
+  }
 }

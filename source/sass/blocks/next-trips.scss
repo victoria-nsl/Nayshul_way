@@ -5,7 +5,7 @@
     padding-bottom: 30px;
   }
 
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     text-align: center;
     padding-bottom: 25px;
     margin-bottom: 30px;
@@ -26,7 +26,7 @@
     height: 177px;
   }
 
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     display: none;
   }
 }
@@ -44,7 +44,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     justify-content: space-between;
   }
 }
@@ -56,19 +56,19 @@
     width: 32%;
   }
 
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     width: 47%;
   }
 }
 
 .next-trips__list:last-child {
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     width: 100%;
   }
 }
 
 .next-trips__list:not(:last-child) {
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     margin-bottom: 20px;
   }
 }

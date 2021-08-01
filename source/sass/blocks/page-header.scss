@@ -8,12 +8,12 @@
   @media (max-width: $tablet-max-width) {
     position: relative;
     width: 95%;
-    padding: 17px 21px;
+    padding: 17px 21px 15px 21px;
   }
 
-  @media (max-width: $mobil-max-width) {
+  @media (max-width: $mobile-max-width) {
     width: 90%;
-    padding: 18px 16px 14px 16px;
+    padding: 18px 16px 13px 16px;
   }
 }
 

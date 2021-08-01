@@ -11,6 +11,28 @@
   @media (min-resolution: 2dppx) {
     background-image: url("../img/travel-europe-desktop@2x.jpg");
   }
+
+  @media (max-width: $tablet-max-width) {
+    width: 52%;
+    padding: 58px 23% 208px 24%;
+    background-image: url("../img/travel-europe-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/travel-europe-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 92%;
+    margin-bottom: 20px;
+    padding: 81px 3% 81px 5%;
+    text-align: center;
+    background-image: url("../img/travel-europe-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/travel-europe-mobile@2x.jpg");
+    }
+  }
 }
 
 .travel-europe__title {
@@ -20,14 +42,44 @@
   font-weight: 600;
   font-size: 55px;
   line-height: 80px;
-  letter-spacing: -0.466667px;
+  letter-spacing: normal;
   color: $white;
+
+  @media (max-width: $tablet-max-width) {
+    width: 398px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 150%;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 294px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    font-size: 24px;
+    line-height: 150%;
+  }
 }
 
 .travel-europe__text-block {
   margin-top: -486px;
   margin-bottom: 486px;
   padding-left: 56%;
+
+  @media (max-width: $tablet-max-width) {
+    width: 52%;
+    padding: 0 24% 0 24%;
+    margin-top: -224px;
+    margin-bottom: 224px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 90%;
+    padding: 0 5% 0 5%;
+    margin: 0 auto;
+  }
 }
 
 .travel-europe__description {
@@ -39,4 +91,14 @@
   line-height: 170%;
   color: $white;
   letter-spacing: -0.466667px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    color: $dark;
+    margin-bottom: 18px;
+  }
 }
