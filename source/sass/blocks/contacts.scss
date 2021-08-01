@@ -30,15 +30,11 @@
 
 .contacts__title {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   font-weight: 600;
   font-size: 18px;
   line-height: 32px;
   color: $darkest;
-
-  @media (max-width: $mobile-max-width) {
-    margin-bottom: 30px;
-  }
 }
 
 

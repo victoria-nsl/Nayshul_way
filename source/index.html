@@ -484,27 +484,33 @@
       </section>
 
       <section class="questions page-main__questions">
-        <h2 class="questions__title">
-          У вас остались вопросы?
-        </h2>
-        <p class="questions__text">
-          Оставьте свой номер или e-mail и мы свяжемся с Вами
-        </p>
-        <form class="questions__form" action="https://echo.htmlacademy.ru/" method="post">
-          <ul class="questions__list">
-            <li class="questions__item">
-              <label class="visually-hidden" for="tel">Телефон</label>
-              <input class="questions__tel" id="tel" type="tel" name="tel" placeholder="+ 7 Введите 10 цифр номера" minlength="10" required >
-            </li>
-            <li class="questions__item">
-              <label class="visually-hidden" for="email"> email</label>
-              <input class="questions__email" id="email" type="email" name="email" placeholder="E-mail">
-            </li>
-          </ul>
-          <button class="button button--questions" type="submit">
-            отправить
-          </button>
-        </form>
+        <div class="questions-wrapper">
+          <div class="questions__wrapper-form">
+            <h2 class="questions__title">
+              У Вас остались вопросы?
+            </h2>
+            <p class="questions__text">
+              Оставьте свой номер или e-mail и мы свяжемся с Вами
+            </p>
+            <form class="questions__form" action="https://echo.htmlacademy.ru/" method="post">
+              <ul class="questions__list">
+                <li class="questions__item">
+                  <label class="visually-hidden" for="tel">Телефон</label>
+                  <div class="questions__tel-wrapper">
+                    <input class="questions__input  questions__input--tel" id="tel" type="tel" name="tel" placeholder="Введите 10 цифр номера" minlength="10" required >
+                  </div>
+                </li>
+                <li class="questions__item">
+                  <label class="visually-hidden" for="email"> email</label>
+                  <input class="questions__input questions__input--email" id="email" type="email" name="email" placeholder="E-mail">
+                </li>
+              </ul>
+              <button class="button button--questions" type="submit">
+                отправить
+              </button>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
 
