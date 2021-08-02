@@ -1,79 +1,359 @@
 .prices {
   width: 1170px;
-  padding: 0 27px 0 27px;
   margin: 0 auto;
+  margin-bottom: 140px;
+  padding: 0 27px 0 27px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 94%;
+    margin: 0 auto;
+    margin-bottom: 108px;
+    padding: 0 21px 0 21px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0 16px 0 16px;
+  }
 }
 
+.prices__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+//КАРТОЧКИ С ПАКЕТАМИ УСЛУГ
+.prices__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 770px;
+
+  @media (max-width: $tablet-max-width) {
+    justify-content: center;
+    order: 2;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.prices__item {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  padding: 40px 30px 30px 30px;
+  box-sizing: border-box;
+
+  border: 1px solid rgba($dark, 0.3);
+  border-radius: 6px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 288px;
+    padding: 30px 0 0 0;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.prices__item:not(:last-child) {
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 30px;
+  }
+}
+
+
 .prices__title-package {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0;
+
   font-weight: 600;
   font-size: 28px;
   line-height: 34px;
   color: rgba($darkest, 0.7);
+
+  @media (max-width: $tablet-max-width) {
+    padding: 0 20px 0 20px;
+    font-size: 24px;
+    line-height: 38px;
+    text-align: center;
+  }
 }
 
-.prices__title-package:hover {
-  color: $scarlet;
+.prices__title-designation {
+  letter-spacing: -1.27273px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin-bottom: 4px;
+  }
 }
 
-.prices__dollar {
+.prices__title-dollar {
   font-size: 25px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+  }
 }
 
 .prices__text-package {
+  position: relative;
+
   margin: 0;
+  margin-top: 40px;
+  margin-bottom: 59px;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: $dark;
+
+  @media (max-width: $tablet-max-width) {
+    width: 248px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0 20px 0 20px;
+    text-align: center;
+  }
+}
+
+.prices__text-package br {
+  @media (max-width: $tablet-max-width) {
+    display: none;
+  }
+}
+
+.prices__text-package::after {
+  position: absolute;
+  bottom: -28px;
+  right: 0;
+  content: "";
+
+  width: 310px;
+  height: 1px;
+
+  background-color: rgba($dark, 0.3);
+
+  @media (max-width: $tablet-max-width) {
+    bottom: -10px;
+    right: 20px;
+
+    width: 248px;
+  }
+}
+
+.prices__list-services {
+  flex-grow: 1;
+  margin-bottom: 30px;
 }
 
 .prices__item-service {
+  display: flex;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
   color: $dark;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 0 20px 0 20px;
+  }
 }
 
-.prices__title {
+.prices__item-service:not(:last-child) {
+  margin-bottom: 15px;
+
+  @media (max-width: $tablet-max-width) {
+    margin-bottom: 10px;
+  }
+}
+
+.prices__item-service svg {
+  margin-top: 8px;
+
+  fill: $darkest;
+
+  @media (max-width: $tablet-max-width) {
+    fill: $scarlet;
+  }
+}
+
+.prices__item-service span {
+  width: 280px;
+  margin-left: 15px;
+
+  @media (max-width: $tablet-max-width) {
+    margin-left: 18px;
+    text-align: start;
+  }
+}
+
+//ховеры
+.prices__item--package:hover {
+  padding: 38px 28px 28px 28px;
+
+  border: 3px solid $scarlet;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 28px 0 0 0;
+  }
+}
+
+.prices__item--package:hover .prices__item-service,
+.prices__item--package:hover .prices__text-package,
+.prices__item--package:hover .prices__title-package {
+  @media (max-width: $tablet-max-width) {
+    padding: 0 18px 0 18px;
+  }
+}
+
+.prices__item--package:hover .prices__title-package {
+  color: $scarlet;
+}
+
+.prices__item--package:hover .prices__designation {
+  letter-spacing: normal;
+}
+
+.prices__item--package:hover .prices__item-service svg {
+  fill: $scarlet;
+}
+
+.prices__item--package:hover .prices__text-package::after {
+  background-color: $scarlet;
+}
+
+//ЦЕНЫ
+.prices__info {
+  width: 370px;
+  padding: 115px 0 95px 60px;
+  box-sizing: border-box;
+
+  @media (max-width: $tablet-max-width) {
+    order: 1;
+
+    width: 100%;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.prices__title-info {
   margin: 0;
+  margin-bottom: 45px;
+
   font-weight: 600;
   font-size: 55px;
   line-height: 90px;
   color: $dark;
+
+  @media (max-width: $tablet-max-width) {
+    width: 158px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+
+    font-size: 24px;
+  }
 }
 
-.prices__text {
+.prices__text-info {
+  width: 306px;
   margin: 0;
+  margin-bottom: 60px;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 170%;
   color: rgba($dark, 0.7);
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 32px;
+
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 20px;
+  }
 }
 
-.prices__text-phone {
+.prices__text-phone-info {
   margin: 0;
+  margin-bottom: 12px;
+  margin-left: 50px;
+
   font-weight: 500;
   font-size: 22px;
   line-height: 34px;
   color: $darkest;
+
+  @media (max-width: $tablet-max-width) {
+    width: 175px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    line-height: 34px;
+    text-align: center;
+  }
 }
 
-.prices__phone-link {
+.prices__phone-link-info {
   display: flex;
   align-items: center;
 }
 
-.prices__phone-link span {
+.prices__phone-link-info span {
+  margin-left: 18px;
+
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
   color: $black;
+
+
+  @media (max-width: $tablet-max-width) {
+    width: 194px;
+    margin: 0 auto;
+
+    font-size: 18px;
+    text-align: center;
+  }
 }
 
-.prices__phone-link svg {
+.prices__phone-link-info svg {
   width: 30px;
   height: 30px;
+
   fill: none;
   stroke: $scarlet;
+
+  @media (max-width: $tablet-max-width) {
+    display: none;
+  }
+}
+
+.prices__phone-link-info:hover .prices__phone-link-info-span {
+  color: $scarlet;
 }
