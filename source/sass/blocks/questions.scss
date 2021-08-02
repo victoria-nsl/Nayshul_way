@@ -1,13 +1,13 @@
 .questions {
   width: 1170px;
-  padding: 0 27px;
   margin: 0 auto;
   margin-bottom: 86px;
+  padding: 0 27px;
 
   @media (max-width: $tablet-max-width) {
     width: 100%;
-    padding: 0;
     margin-bottom: 26px;
+    padding: 0;
   }
 
   @media (max-width: $mobile-max-width) {
@@ -17,6 +17,7 @@
 
 .questions-wrapper {
   padding: 70px 0;
+
   background-image: url("../img/questions-image-desktop.jpg");
   background-repeat: no-repeat;
   background-position: start center;
@@ -29,6 +30,7 @@
   @media (max-width: $tablet-max-width) {
     width: 100%;
     padding: 70px 0 74px 0;
+
     background-image: url("../img/questions-image-tablet.jpg");
     background-size: 100% 100%;
 
@@ -48,19 +50,23 @@
   padding: 50px 49px 49px 50px;
   margin-left: 44%;
   box-sizing: border-box;
+
   text-align: center;
+
   background-color: $white;
   box-shadow: 0 4px 30px rgba($black-shadow, 0.1);
   border-radius: 5px;
 
   @media (max-width: $tablet-max-width) {
     margin: 0 auto;
+
     box-shadow: none;
   }
 
   @media (max-width: $mobile-max-width) {
     width: 100%;
     padding: 50px 16px;
+
     background-color: $white-dark;
   }
 }
@@ -68,6 +74,7 @@
 .questions__title {
   margin: 0;
   margin-bottom: 13px;
+
   font-weight: 600;
   font-size: 25px;
   line-height: 32px;
@@ -81,6 +88,7 @@
 .questions__text {
   margin: 0;
   margin-bottom: 21px;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -120,11 +128,13 @@
   width: 269px;
   padding: 16px 15px 15px 15px;
   box-sizing: border-box;
+
   font: inherit;
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
   color: $darkest;
+
   border: 1px solid rgba($dark, 0.3);
 
   @media (max-width: $mobile-max-width) {
@@ -150,9 +160,11 @@
   top: 7px;
   left: 14px;
   content: "";
+
   width: 6px;
   height: 27px;
   margin-right: 5px;
+
   background-image: url("../img/icon-star.svg");
   background-repeat: no-repeat;
   background-position: center;

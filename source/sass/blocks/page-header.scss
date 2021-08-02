@@ -1,12 +1,13 @@
 .page-header {
-  width: 1170px;
-  padding: 36px 27px 32px 27px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
+  width: 1170px;
+  margin: 0 auto;
+  padding: 36px 27px 32px 27px;
 
   @media (max-width: $tablet-max-width) {
     position: relative;
+
     width: 95%;
     padding: 17px 21px 15px 21px;
   }
@@ -50,6 +51,7 @@
   width: 30px;
   height: 30px;
   margin-right: 9px;
+
   fill: none;
   stroke: $darkest;
 }

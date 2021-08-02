@@ -1,11 +1,13 @@
 .page-body {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+
   min-width: $min-width;
   max-width: $max-width;
   min-height: 100%;
   padding: 0;
   margin: 0;
+
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;

@@ -1,10 +1,11 @@
 //Навигация список
 .main-navigation__list {
-  width: 196px;
-  margin-right: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 196px;
+  margin-right: 70px;
+
 
   @media (max-width: $tablet-max-width) {
     position: absolute;
@@ -14,9 +15,10 @@
     flex-direction: column;
     justify-content: start;
     width: 320px;
-    padding-top: 134px;
     min-height: 568px;
     margin-right: 0;
+    padding-top: 134px;
+
     background-color: $white;
     box-shadow: 0 4px 30px rgba($black-shadow, 0.1);
   }
@@ -40,6 +42,7 @@
     width: 320px;
     padding: 17px 35px 17px 16px;
     box-sizing: border-box;
+
     background-color: $white-dark;
   }
 }
@@ -58,6 +61,7 @@
 
   @media (max-width: $tablet-max-width) {
     position: relative;
+
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
@@ -75,8 +79,10 @@
     top: 0;
     left: 262px;
     content: "";
+
     width: 25px;
     height: 25px;
+
     background-image: url("../img/icon-arrow-down.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -92,9 +98,11 @@
     top: 0;
     right: 0;
     z-index: 2;
+
+    display: block;
     width: 72px;
     height: 52px;
-    display: block;
+
     cursor: pointer;
     border: none;
   }
@@ -111,8 +119,10 @@
     position: absolute;
     top: 0;
     left: 0;
+
     width: 72px;
     height: 52px;
+
     background-color: $scarlet;
     background-image: url("../img/icon-open.svg");
     background-repeat: no-repeat;
@@ -131,8 +141,10 @@
     position: absolute;
     top: 0;
     left: 0;
+
     width: 72px;
     height: 52px;
+
     background-color: $white;
     background-image: url("../img/icon-cross.svg");
     background-repeat: no-repeat;

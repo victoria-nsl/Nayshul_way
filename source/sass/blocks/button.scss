@@ -1,6 +1,7 @@
 .button {
   display: inline-block;
   vertical-align: middle;
+
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -9,6 +10,7 @@
   text-align: center;
   text-transform: uppercase;
   color: $white;
+
   background-color: $scarlet;
   border: none;
   cursor: pointer;
@@ -49,6 +51,7 @@
   width: 14px;
   height: 14px;
   margin-left: 122px;
+
   background-image: url("../img/icon-arrow-right.svg");
   background-repeat: no-repeat;
 
