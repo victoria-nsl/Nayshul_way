@@ -8,6 +8,7 @@
 .countries__slider-buttons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 900px;
   padding-bottom: 15px;
   margin-bottom: 65px;

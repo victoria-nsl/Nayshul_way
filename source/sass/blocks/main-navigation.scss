@@ -11,6 +11,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 20;
 
     flex-direction: column;
     justify-content: start;
@@ -97,7 +98,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 30;
 
     display: block;
     width: 72px;
