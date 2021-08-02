@@ -181,12 +181,7 @@
 
 .prices__item-service svg {
   margin-top: 8px;
-
-  fill: $darkest;
-
-  @media (max-width: $tablet-max-width) {
-    fill: $scarlet;
-  }
+  fill: $scarlet;
 }
 
 .prices__item-service span {
@@ -200,7 +195,7 @@
 }
 
 //ховеры
-.prices__item--package:hover {
+.prices__item:hover {
   padding: 38px 28px 28px 28px;
 
   border: 3px solid $scarlet;
@@ -210,27 +205,27 @@
   }
 }
 
-.prices__item--package:hover .prices__item-service,
-.prices__item--package:hover .prices__text-package,
-.prices__item--package:hover .prices__title-package {
+.prices__item:hover .prices__item-service,
+.prices__item:hover .prices__text-package,
+.prices__item:hover .prices__title-package {
   @media (max-width: $tablet-max-width) {
     padding: 0 18px 0 18px;
   }
 }
 
-.prices__item--package:hover .prices__title-package {
+.prices__item:hover .prices__title-package {
   color: $scarlet;
 }
 
-.prices__item--package:hover .prices__designation {
+.prices__item:hover .prices__title-designation {
   letter-spacing: normal;
 }
 
-.prices__item--package:hover .prices__item-service svg {
-  fill: $scarlet;
+.prices__item:hover .prices__item-service svg {
+  fill: $darkest;
 }
 
-.prices__item--package:hover .prices__text-package::after {
+.prices__item:hover .prices__text-package::after {
   background-color: $scarlet;
 }
 
@@ -339,6 +334,7 @@
 
     font-size: 18px;
     text-align: center;
+    color: $scarlet;
   }
 }
 
@@ -356,4 +352,8 @@
 
 .prices__phone-link-info:hover .prices__phone-link-info-span {
   color: $scarlet;
+
+  @media (max-width: $tablet-max-width) {
+    color: $black;
+  }
 }

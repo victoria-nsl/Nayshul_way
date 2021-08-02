@@ -24,10 +24,15 @@
 
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .countries__slider-button--current {
   color: $scarlet;
+}
+
+.countries__slider-button:hover {
+  color: rgba($dark, 0.5);
 }
 
 //Слайды

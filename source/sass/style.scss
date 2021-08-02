@@ -3,13 +3,12 @@
 @import "global/font.scss";
 @import "global/global.scss";
 /*БЛОКИ*/
-@import "blocks/page-body.scss";
 @import "blocks/button.scss";
 @import "blocks/page-header.scss";
 @import "blocks/main-navigation.scss";
 @import "blocks/travel-europe.scss";
 @import "blocks/places-visit.scss";
-@import "blocks/countries.scss";
+//@import "blocks/countries.scss";
 @import "blocks/prices.scss";
 @import "blocks/questions.scss";
 @import "blocks/page-footer.scss";
@@ -18,4 +17,5 @@
 @import "blocks/corporate-travelers.scss";
 
 //Модальные окна
-@import "blocks/modal.scss";
+@import "blocks/modal-buy.scss";
+@import "blocks/modal-success.scss";

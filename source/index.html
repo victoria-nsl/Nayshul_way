@@ -10,8 +10,8 @@
     <link href="css/style.min.css" rel="stylesheet">
   </head>
 
-  <body class="page-body">
-    <header class="page-header page-body__header">
+  <body>
+    <header class="page-header">
       <a class="page-header__logo-link">
         <picture>
           <source media="(max-width: 1223px)" srcset="img/logotype-tablet.svg">
@@ -43,10 +43,10 @@
       </a>
     </header>
 
-    <main class="page-main page-body__main">
+    <main>
       <h1 class="visually-hidden">Сайт туристического агентства Way</h1>
 
-      <section class="travel-europe page-main__travel-europe">
+      <section class="travel-europe">
         <div class= "travel-europe__image-block">
           <h2 class= "travel-europe__title">
             Путешествие по Европе
@@ -63,7 +63,7 @@
         </div>
       </section>
 
-      <section class="places-visit page-main__places-visit" id="places-visit">
+      <section class="places-visit" id="places-visit">
         <h2 class= "places-visit__title">
           Места посещения
         </h2>
@@ -72,7 +72,7 @@
         </p>
         <ul class= "places-visit__list">
           <li class= "places-visit__item">
-            <a class= "places-visit__link places-visit__link--curent" href="#countries" >
+            <a class= "places-visit__link places-visit__link--curent" href="#countries" aria-label="Cмотреть по Греции">
               <div class= "places-visit__image-block">
                 <h3 class= "places-visit__caption">Греция</h3>
                 <div class= "places-visit__image">
@@ -93,7 +93,7 @@
             </a>
           </li>
           <li class= "places-visit__item">
-            <a class= "places-visit__link"  href="#countries">
+            <a class= "places-visit__link"  href="#countries" aria-label="Cмотреть тур по Албании">
               <div class= "places-visit__image-block">
                 <h3 class= "places-visit__caption">Албания</h3>
                 <div class= "places-visit__image">
@@ -114,7 +114,7 @@
             </a>
           </li>
           <li class= "places-visit__item">
-            <a class= "places-visit__link"  href="#countries">
+            <a class= "places-visit__link"  href="#countries" aria-label="Cмотреть тур по Македонии" >
               <div class= "places-visit__image-block">
                 <h3 class= "places-visit__caption">Македония</h3>
                 <div class= "places-visit__image">
@@ -135,7 +135,7 @@
             </a>
           </li>
           <li class= "places-visit__item">
-            <a class= "places-visit__link" href="#countries" >
+            <a class= "places-visit__link" href="#countries" aria-label="Cмотреть тур по Черногории">
               <div class= "places-visit__image-block">
                 <h3 class= "places-visit__caption">Черногория</h3>
                 <div class= "places-visit__image">
@@ -157,7 +157,7 @@
           </li>
 
           <li class= "places-visit__item">
-            <a class= "places-visit__link" href="#countries" >
+            <a class= "places-visit__link" href="#countries" aria-label="Cмотреть тур по Хорватии">
               <div class= "places-visit__image-block">
                 <h3 class= "places-visit__caption">Хорватия</h3>
                 <div class= "places-visit__image">
@@ -180,7 +180,7 @@
         </ul>
       </section>
 
-      <section class="countries page-main__countries" id="countries">
+      <section class="countries" id="countries">
         <h2 class= "visually-hidden">Места, которые необходимо посетить в странах</h2>
         <div class="countries__slider">
           <div class="countries__slider-buttons">
@@ -446,13 +446,12 @@
         </div>
       </section>
 
-      <section class="prices page-main__prices" id="prices">
+      <section class="prices" id="prices">
         <h2 class= "visually-hidden">Цены на экскурсионные туры</h2>
 
         <div class="prices__wrapper">
           <ul class="prices__list">
             <li class="prices__item">
-              <div class="prices__title-package" ></div>
               <h3 class="prices__title-package">
                 <span class="prices__title-designation" >Комплексный</span>
                 <span class="prices__title-dollar">$1999</span>
@@ -575,7 +574,7 @@
         </div>
       </section>
 
-      <section class="questions page-main__questions">
+      <section class="questions">
         <div class="questions-wrapper">
           <div class="questions__wrapper-form">
             <h2 class="questions__title">
@@ -584,7 +583,7 @@
             <p class="questions__text">
               Оставьте свой номер или e-mail и мы свяжемся с Вами
             </p>
-            <form class="questions__form" action="https://echo.htmlacademy.ru/" method="post">
+            <form action="https://echo.htmlacademy.ru/" method="post">
               <ul class="questions__list">
                 <li class="questions__item">
                   <label class="visually-hidden" for="tel">Телефон</label>
@@ -606,7 +605,7 @@
       </section>
     </main>
 
-    <footer class="page-footer page-body__footer">
+    <footer class="page-footer">
       <section class="next-trips page-footer__next-trips">
         <h2 class="next-trips__title">
           Следующие путешествия
@@ -711,7 +710,7 @@
       </form>
     </section>
 
-    <div class="modal modal-success">
+    <div class="modal-success">
       <p class="modal-success__message">Форма успешно отправлена, спасибо! :)</p>
     </div>
 

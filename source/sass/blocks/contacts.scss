@@ -42,11 +42,6 @@
   color: $darkest;
 }
 
-
-.contacts__link:hover {
-  color: $darkest;
-}
-
 .contacts__link:not(:last-child) {
   margin-bottom: 20px;
 
@@ -103,4 +98,9 @@
 
   background-image: url("../img/icon-tel-footer.svg");
   background-repeat: no-repeat;
+}
+
+
+.contacts__link:hover {
+  color: $darkest;
 }
