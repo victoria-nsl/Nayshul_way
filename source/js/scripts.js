@@ -1,9 +1,17 @@
-//Cлайдер для табов
-
 const imagesSlide = document.querySelectorAll(".countries__slider-item");
 const buttonsSlide = document.querySelectorAll(".countries__slider-button");
 const linksSlide = document.querySelectorAll(".places-visit__link");
 
+const navigationMain = document.querySelector(".main-navigation");
+const navigationToggle = navigationMain.querySelector(".main-navigation__toggle");
+
+const buttonsPrices = document.querySelectorAll(".button--prices");
+const buttonCountries = document.querySelector(".button--countries");
+const popupBuy = document.querySelector(".modal-buy");
+const buttonClose = popupBuy.querySelector(".modal-buy__close");
+
+
+//Cлайдер для табов
 const changeSlide = function (imagesSlide, buttonsSlide, index) {
   for (let i = 0; i < imagesSlide.length; i++) {
     if (imagesSlide[i].classList.contains("countries__slider-item--current")) {
@@ -26,8 +34,8 @@ for (let counter = 0; counter < buttonsSlide.length; counter++) {
   });
 }
 
-//Ссылки на табы
 
+//Ссылки на табы
 const showSlide = function (imagesSlide, linksSlide, index) {
   for (let i = 0; i < imagesSlide.length; i++) {
     if (imagesSlide[i].classList.contains("countries__slider-item--current")) {
@@ -50,19 +58,34 @@ for (let counter = 0; counter < linksSlide.length; counter++) {
   });
 }
 
+
 // Кнопка, навигация в планшетной, десктопной версии
+navigationMain.classList.remove("main-navigation--nojs");
 
-const navMain = document.querySelector(".main-navigation");
-const navToggle = navMain.querySelector(".main-navigation__toggle");
-
-navMain.classList.remove("main-navigation--nojs");
-
-navToggle.addEventListener("click", function() {
-  if (navMain.classList.contains("main-navigation--closed")) {
-    navMain.classList.remove("main-navigation--closed");
-    navMain.classList.add("main-navigation--opened");
+navigationToggle.addEventListener("click", function() {
+  if (navigationMain.classList.contains("main-navigation--closed")) {
+    navigationMain.classList.remove("main-navigation--closed");
+    navigationMain.classList.add("main-navigation--opened");
   } else {
-    navMain.classList.add("main-navigation--closed");
-    navMain.classList.remove("main-navigation--opened");
+    navigationMain.classList.add("main-navigation--closed");
+    navigationMain.classList.remove("main-navigation--opened");
   }
+});
+
+
+//Открытие модального окна
+buttonsPrices.forEach((buttonPrices) => {
+  buttonPrices.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  popupBuy.classList.add("modal-buy__show");
+  });
+});
+
+buttonCountries.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  popupBuy.classList.add("modal-buy__show");
+});
+
+buttonClose.addEventListener("click", function () {
+  popupBuy.classList.remove("modal-buy__show");
 });

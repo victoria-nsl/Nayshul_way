@@ -106,3 +106,22 @@
     padding: 19px 103px 19px 103px;
   }
 }
+
+.button--modal-buy {
+  width: 176px;
+  padding: 19px 39px 17px 40px;
+  box-sizing: border-box;
+  margin-right: 47px;
+
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+    padding: 19px 103px 19px 103px;
+
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

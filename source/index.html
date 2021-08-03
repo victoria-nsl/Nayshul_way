@@ -585,7 +585,7 @@
             <p class="questions__text">
               Оставьте свой номер или e-mail и мы свяжемся с Вами
             </p>
-            <form action="https://echo.htmlacademy.ru/" method="post">
+            <form action="https://echo.htmlacademy.ru/" method="post" target="_blank">
               <ul class="questions__list">
                 <li class="questions__item">
                   <label class="visually-hidden" for="tel">Телефон</label>
@@ -691,7 +691,7 @@
       </section>
     </footer>
 
-    <section class="modal modal-buy">
+    <section class="modal-buy">
       <h2 class="modal-buy__title">
         Купить тур
       </h2>
@@ -699,21 +699,26 @@
         <ul class="modal-buy__list">
           <li class="modal-buy__item">
             <label class="visually-hidden" for="telephone">Телефон</label>
-            <input class="modal-buy__tel" id="telephone" type="tel" name="tel" placeholder="+7 Введите 10 цифр номера" minlength="10" required >
+            <div  class="modal-buy__tel-wrapper">
+              <input class="modal-buy__input modal-buy__input--tel" id="telephone" type="tel" name="tel" placeholder="Введите 10 цифр номера" minlength="10" required >
+            </div>
+
           </li>
           <li class="modal-buy__item">
             <label class="visually-hidden" for="e-mail">email</label>
-            <input class="modal-buy__email" id="e-mail" type="email" name="email" placeholder="E-mail">
+            <input class="modal-buy__input  modal-buy__input--email" id="e-mail" type="email" name="email" placeholder="E-mail">
           </li>
         </ul>
-        <button class="modal-buy__button" type="submit">
+        <button class="button button--modal-buy" type="submit">
           отправить
         </button>
       </form>
+      <button class="modal-buy__close" type="button" aria-label="Закрыть"></button>
     </section>
 
     <div class="modal-success">
       <p class="modal-success__message">Форма успешно отправлена, спасибо! :)</p>
+      <button class="modal-success__close" type="button" aria-label="Закрыть"></button>
     </div>
 
     <script src="js/scripts.min.js"></script>

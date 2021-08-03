@@ -1,3 +1,144 @@
 .modal-buy {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: none;
+  width: 728px;
+  margin: 0 auto;
+  padding: 72px 61px 89px 338px;
+  box-sizing: border-box;
+
+  text-align: end;
+
+  background-color: $white-dark;
+  background-image: url("../img/modal-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: start center;
+  background-size: 46% 100%;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/modal-desktop@2x.jpg");
+    background-size: 46% auto;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 320px;
+    padding: 100px 16px 185px 16px;
+
+    text-align: center;
+
+    background-color: $white;
+    background-image: none;
+    box-shadow: 0 4px 30px rgba($black-shadow, 0.1);
+  }
+}
+
+.modal-buy__title {
+  width: 237px;
+  margin: 0;
+  margin-bottom: 50px;
+  padding-left: 74px;
+
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 170%;
+  color: $black-light;
+  text-align: center;
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+}
+
+.modal-buy__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding-left: 59px;
+
+  @media (max-width: $mobile-max-width) {
+    padding-left: 0;
+  }
+}
+
+.modal-buy__item {
+  width: 270px;
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+  }
+}
+
+.modal-buy__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.modal-buy__input {
+  width: 270px;
+  padding: 16px 15px 15px 15px;
+  box-sizing: border-box;
+
+  font: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $black-light;
+
+  border: 1px solid $grey;
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+  }
+}
+
+.modal-buy__input:hover {
+  border: 1px solid rgba($orange, 0.3);
+}
+
+.modal-buy__input--tel {
+  padding: 16px 15px 15px 50px;
+}
+
+.modal-buy__tel-wrapper {
+  position: relative;
+}
+
+.modal-buy__tel-wrapper::after {
+  position: absolute;
+  top: 7px;
+  left: 14px;
+  content: "";
+
+  width: 6px;
+  height: 27px;
+  margin-right: 5px;
+
+  background-image: url("../img/icon-star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal-buy__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+  background-image: url("../img/icon-close-cross.svg");
+  background-repeat: no-repeat;
+  border: none;
+
+  cursor: pointer;
+}
+
+.modal-buy__show {
+  display: block;
 }

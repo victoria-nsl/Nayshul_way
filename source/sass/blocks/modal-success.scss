@@ -1,3 +1,48 @@
 .modal-success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: none;
+  width: 728px;
+  margin: 0 auto;
+  padding: 176px 164px;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background: $white-dark;
+
+  @media (max-width: $mobile-max-width) {
+    width: 288px;
+    margin: 0 auto;
+    padding: 150px 20px;
+  }
+}
+
+.modal-success__message {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 170%;
+}
+
+.modal-success__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+  background-image: url("../img/icon-close-cross.svg");
+  background-repeat: no-repeat;
+  border: none;
+
+  cursor: pointer;
+}
+
+.modal-success__show {
+  display: block;
 }
