@@ -17,25 +17,43 @@
 }
 
 //Кнопки
+
+.countries__wrapper-slider-buttons {
+  margin-bottom: 65px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100vw;
+    margin-bottom: 30px;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 25px;
+  }
+}
+
 .countries__slider-buttons {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 902px;
   padding-bottom: 15px;
-  margin-bottom: 65px;
 
   border-bottom: 1px solid rgba($dark, 0.3);
 
   @media (max-width: $tablet-max-width) {
-    width: calc(100% - 21px);
     margin-left: 21px;
-    margin-bottom: 30px;
     padding-bottom: 14px;
   }
 
   @media (max-width: $mobile-max-width) {
-    width: calc(100% - 16px);
     margin-left: 16px;
   }
 }
