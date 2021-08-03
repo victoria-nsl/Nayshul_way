@@ -2,12 +2,12 @@
   position: relative;
 
   @media (max-width: $tablet-max-width) {
-    padding-bottom: 30px;
+    padding-bottom: 28px;
   }
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 30px;
-    padding-bottom: 25px;
+    padding-bottom: 28px;
 
     text-align: center;
 
@@ -42,6 +42,10 @@
   font-size: 18px;
   line-height: 32px;
   color: $darkest;
+
+  @media (max-width: $tablet-max-width) {
+    margin-bottom: 19px;
+  }
 }
 
 .next-trips__list-wrapper {
@@ -73,7 +77,7 @@
 
 .next-trips__list:not(:last-child) {
   @media (max-width: $mobile-max-width) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 }
 

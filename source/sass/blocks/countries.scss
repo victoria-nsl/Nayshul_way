@@ -1,7 +1,19 @@
 .countries {
   width: 1170px;
   margin: 0 auto;
+  margin-bottom: 250px;
   padding: 0 27px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 78px;
+    padding: 0;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 45px;
+  }
 }
 
 //Кнопки
@@ -9,18 +21,33 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 900px;
+  width: 902px;
   padding-bottom: 15px;
   margin-bottom: 65px;
 
   border-bottom: 1px solid rgba($dark, 0.3);
+
+  @media (max-width: $tablet-max-width) {
+    width: calc(100% - 21px);
+    margin-left: 21px;
+    margin-bottom: 30px;
+    padding-bottom: 14px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: calc(100% - 16px);
+    margin-left: 16px;
+  }
 }
 
 .countries__slider-button {
+  margin: 0;
+  padding: 0;
+
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: -0.415px;
+  letter-spacing: 1.415px;
   color: rgba($dark, 0.3);
 
   border: none;
@@ -37,8 +64,14 @@
 }
 
 //Слайды
+
 .countries__slider-item {
   display: none;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .countries__slider-item--current {
@@ -47,62 +80,179 @@
 
 .countries__slider-item-wrapper {
   display: flex;
+
+  @media (max-width: $tablet-max-width) {
+    flex-direction: column;
+  }
 }
+//Карточка с описанием тура по стране
 
 .countries__description-block {
-  width: 320px;
+  width: 470px;
+  padding-top: 10px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 94%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 0 21px;
+
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 90%;
+    margin-bottom: 50px;
+    padding: 0 16px;
+  }
 }
 
 .countries__title {
+  position: relative;
+
   margin: 0;
+  margin-bottom: 48px;
 
   font-weight: 600;
   font-size: 55px;
   line-height: 90px;
   letter-spacing: -1.245px;
   color: $dark;
+
+  @media (max-width: $tablet-max-width) {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 150%;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    font-size: 24px;
+  }
+}
+
+.countries__title::before {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  content: "";
+
+  width: 175px;
+  height: 3px;
+
+  background-color: $scarlet;
+
+  @media (max-width: $tablet-max-width) {
+    display: none;
+  }
 }
 
 .countries__description {
+  width: 370px;
   margin: 0;
+  margin-bottom: 50px;
 
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
   letter-spacing: -0.466667px;
   color: rgba($dark, 0.7);
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
+//Карточка с фотографией и отзывом
 .countries__image-feedback-block {
-  width: 785px;
+  width: 700px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+  }
 }
 
+.countries__image-feedback-block img {
+  width: 430px;
+  height: 596px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+  }
+}
+
+//Каротчка с отзывом
 .countries__feedback-block {
   position: relative;
   z-index: 2;
 
   width: 382px;
-  padding: 30px;
-  margin-top: -482px;
-  margin-bottom: 300px;
+  margin-top: -487px;
   margin-left: 318px;
+  padding: 30px;
   box-sizing: border-box;
 
   background-color: $white;
   text-align: start;
 
-  outline: 5px solid rgba(0, 255, 0, 0.5);
-  outline-offset: -5px;
+  @media (max-width: $tablet-max-width) {
+    min-height: 336px;
+    margin: 0 auto;
+    margin-top: -339px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 268px;
+    min-height: 431px;
+    margin-top: -370px;
+    padding: 32px 20px 34px 20px;
+
+    text-align: center;
+  }
 }
 
 .countries__feedback-title {
+  position: relative;
+
   margin: 0;
+  margin-bottom: 32px;
 
   font-weight: 500;
   font-size: 30px;
   line-height: 37px;
   letter-spacing: -0.691667px;
   color: $dark;
+
+  @media (max-width: $mobile-max-width) {
+    width: 228px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.countries__feedback-title::before {
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  content: "";
+
+  width: 68px;
+  height: 1px;
+
+  background-color: $scarlet;
+
+  @media (max-width: $mobile-max-width) {
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 
 .countries__feedback-wrapper {
@@ -111,19 +261,50 @@
 
 .countries__feedback-text {
   margin: 0;
+  margin-bottom: 30px;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 28px;
   letter-spacing: -0.408333px;
   color: rgba($dark, 0.7);
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 18px;
+  }
+}
+
+.countries__feedback-author-wrapper {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $mobile-max-width) {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.countries__feedback-author-wrapper img {
+  width: 37px;
+  height: 38px;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 6px;
+  }
 }
 
 .countries__feedback-author {
+  margin-left: 16px;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.466667px;
   color: $dark;
+
+  @media (max-width: $mobile-max-width) {
+    margin-left: 12px;
+  }
 }

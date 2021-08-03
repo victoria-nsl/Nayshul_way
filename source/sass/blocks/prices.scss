@@ -1,20 +1,20 @@
 .prices {
   width: 1170px;
   margin: 0 auto;
-  margin-bottom: 135px;
+  margin-bottom: 132px;
   padding: 0 27px 0 27px;
 
   @media (max-width: $tablet-max-width) {
     width: 94%;
     margin: 0 auto;
-    margin-bottom: 108px;
+    margin-bottom: 105px;
     padding: 0 21px 0 21px;
   }
 
   @media (max-width: $mobile-max-width) {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     padding: 0 16px 0 16px;
   }
 }
@@ -32,6 +32,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 770px;
+
+  background-color: $white;
 
   @media (max-width: $tablet-max-width) {
     justify-content: center;
@@ -147,7 +149,7 @@
   background-color: rgba($dark, 0.3);
 
   @media (max-width: $tablet-max-width) {
-    bottom: -10px;
+    bottom: -9px;
     right: 20px;
 
     width: 248px;
@@ -156,7 +158,13 @@
 
 .prices__list-services {
   flex-grow: 1;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+}
+
+.prices__list-services--complex {
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 35px;
+  }
 }
 
 .prices__item-service {
@@ -233,7 +241,7 @@
 //ЦЕНЫ
 .prices__info {
   width: 370px;
-  padding: 115px 0 95px 60px;
+  padding: 110px 0 95px 62px;
   box-sizing: border-box;
 
   @media (max-width: $tablet-max-width) {
@@ -247,7 +255,7 @@
 
 .prices__title-info {
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 48px;
 
   font-weight: 600;
   font-size: 55px;
@@ -290,7 +298,7 @@
   }
 
   @media (max-width: $mobile-max-width) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 }
 
