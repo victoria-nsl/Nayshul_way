@@ -105,6 +105,8 @@
 }
 
 .questions__list {
+  @include reset-style-list;
+
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
@@ -161,7 +163,7 @@
 
 .questions__input--tel {
   font-size: 14px;
-  padding: 16px 15px 15px 50px;
+  padding: 16px 15px 15px 26px;
 }
 
 .questions__tel-wrapper::after {

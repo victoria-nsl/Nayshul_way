@@ -1,5 +1,7 @@
 //Навигация список
 .main-navigation__list {
+  @include reset-style-list;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

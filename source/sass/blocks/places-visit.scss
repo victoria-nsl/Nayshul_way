@@ -94,6 +94,8 @@
 
 //Карточки
 .places-visit__list {
+  @include reset-style-list;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

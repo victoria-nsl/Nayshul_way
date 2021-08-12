@@ -83,6 +83,10 @@
 
 //Слайды
 
+.countries__slider-list {
+  @include reset-style-list;
+}
+
 .countries__slider-item {
   display: none;
 

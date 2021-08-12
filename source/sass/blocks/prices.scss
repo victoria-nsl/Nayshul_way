@@ -28,6 +28,8 @@
 
 //КАРТОЧКИ С ПАКЕТАМИ УСЛУГ
 .prices__list {
+  @include reset-style-list;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -157,6 +159,8 @@
 }
 
 .prices__list-services {
+  @include reset-style-list;
+
   flex-grow: 1;
   margin-bottom: 28px;
 }
@@ -188,7 +192,7 @@
   }
 }
 
-.prices__item-service svg {
+.prices__service-check {
   margin-top: 8px;
   fill: $scarlet;
 }
@@ -244,7 +248,7 @@
   letter-spacing: normal;
 }
 
-.prices__item:hover .prices__item-service svg {
+.prices__item:hover .prices__service-check {
   fill: $darkest;
 }
 

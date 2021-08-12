@@ -3,13 +3,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   width: 1161px;
   margin: 0 auto;
-  padding: 74px 38px 74px 27px;
+  padding: 74px 36px 74px 27px;
 
   @media (max-width: $tablet-max-width) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 95%;
+    width: 94.5%;
     padding: 54px 21px 54px 21px;
   }
 

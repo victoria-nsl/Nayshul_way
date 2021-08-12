@@ -58,6 +58,8 @@
 }
 
 .next-trips__list {
+  @include reset-style-list;
+
   width: 129px;
 
   @media (max-width: $tablet-max-width) {
