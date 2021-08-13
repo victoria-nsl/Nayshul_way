@@ -1,34 +1,21 @@
 .contacts {
-  position: relative;
-  padding-left: 65px;
+  width: 267px;
 
   @media (max-width: $tablet-max-width) {
-    padding-left: 0;
+    width: 258px;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 50px;
   }
 
   @media (max-width: $mobile-max-width) {
+    width: 100%;
     padding-bottom: 25px;
-    margin-bottom: 30px;
+    padding-left: 0;
 
     text-align: center;
 
     border-bottom: 1px solid $grey;
-  }
-}
-
-.contacts::before {
-  position: absolute;
-  top: 0;
-  right: -10px;
-  content: "";
-
-  width: 1px;
-  height: 189px;
-
-  background-color: $grey;
-
-  @media (max-width: $tablet-max-width) {
-    display: none;
   }
 }
 
@@ -44,6 +31,10 @@
 
 .contacts__link:not(:last-child) {
   margin-bottom: 20px;
+
+  @media (max-width: $tablet-max-width) {
+    margin-bottom: 23px;
+  }
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 22px;
@@ -72,14 +63,11 @@
   content: "";
   width: 26px;
   height: 20px;
-  margin-right: 15px;
+  margin-right: 5%;
+  margin-top: -2px;
 
   background-image: url("../img/icon-email-footer.svg");
   background-repeat: no-repeat;
-
-  @media (max-width: $tablet-max-width) {
-    margin-top: -2px;
-  }
 }
 
 
@@ -102,13 +90,12 @@
 
   width: 30px;
   height: 30px;
-  margin-right: 15px;
-
+  margin-right: 3.7%;
+  margin-top: -2px;
   background-image: url("../img/icon-tel-footer.svg");
   background-repeat: no-repeat;
 
   @media (max-width: $tablet-max-width) {
-    margin-top: -2px;
     margin-right: 10px;
   }
 }

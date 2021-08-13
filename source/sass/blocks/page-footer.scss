@@ -1,14 +1,13 @@
 .page-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 1161px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 60.4%;
   margin: 0 auto;
-  padding: 74px 36px 74px 27px;
+  padding: 74px 37px 74px 28px;
 
   @media (max-width: $tablet-max-width) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
     width: 94.5%;
     padding: 54px 21px 54px 21px;
   }
@@ -20,6 +19,8 @@
 }
 
 .page-footer__next-trips {
+  width: 33.4%;
+
   @media (max-width: $tablet-max-width) {
     width: 54%;
   }
@@ -30,6 +31,8 @@
 }
 
 .page-footer__contacts {
+  width: 34.3%;
+
   @media (max-width: $tablet-max-width) {
     width: 39%;
   }
@@ -40,6 +43,8 @@
 }
 
 .page-footer__corporate-travelers {
+  width: 27.5%;
+
   @media (max-width: $tablet-max-width) {
     width: 100%;
   }

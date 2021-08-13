@@ -1,36 +1,18 @@
 .next-trips {
-  position: relative;
+  border-right: 1px solid $grey;
 
   @media (max-width: $tablet-max-width) {
-    padding-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 30px;
-    padding-bottom: 28px;
+    padding-bottom: 21px;
 
     text-align: center;
 
     border-bottom: 1px solid $grey;
-  }
-}
-
-.next-trips ::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: "";
-
-  width: 1px;
-  height: 189px;
-  background-color: $grey;
-
-  @media (max-width: $tablet-max-width) {
-    height: 177px;
-  }
-
-  @media (max-width: $mobile-max-width) {
-    display: none;
+    border-right: none;
   }
 }
 
@@ -79,11 +61,11 @@
 
 .next-trips__list:not(:last-child) {
   @media (max-width: $mobile-max-width) {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 }
 
-.next-trips__item:not(:last-child) {
+.next-trips__item {
   margin-bottom: 8px;
 }
 

@@ -1,5 +1,7 @@
 .corporate-travelers {
-  padding-left: 65px;
+  padding-left: 4.7%;
+
+  border-left: 1px solid $grey;
 
   @media (max-width: $tablet-max-width) {
     padding-top: 29px;
@@ -9,6 +11,7 @@
     text-align: center;
 
     border-top: 1px solid $grey;
+    border-left: none;
   }
 
   @media (max-width: $mobile-max-width) {

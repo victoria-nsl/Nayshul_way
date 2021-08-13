@@ -1,7 +1,8 @@
 .page-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 61%;
   margin: 0 auto;
   padding: 36px 27px 32px 27px;
 
@@ -18,14 +19,19 @@
   }
 }
 
-//Логотип
-.page-header__logo-link {
-  margin-right: 617px;
+.page-header__wrapper-navigation-phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+//Логотип
+/*
+.page-header__logo-link {
   @media (max-width: $tablet-max-width) {
     margin-right: 0;
   }
-}
+}*/
 
 .page-header__logo-link img {
   width: 57px;
@@ -41,6 +47,7 @@
 .page-header__phone-link {
   display: flex;
   align-items: center;
+  width: 230px;
 
   @media (max-width: $tablet-max-width) {
     display: none;
