@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 60.4%;
+  width: 93.6%;
+  max-width: 1159px;
   margin: 0 auto;
   padding: 74px 37px 74px 28px;
 
@@ -43,7 +44,7 @@
 }
 
 .page-footer__corporate-travelers {
-  width: 27.5%;
+  width: 27.6%;
 
   @media (max-width: $tablet-max-width) {
     width: 100%;

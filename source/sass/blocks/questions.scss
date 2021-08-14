@@ -1,5 +1,6 @@
 .questions {
-  width: 61%;
+  width: 95.5%;
+  max-width: 1170px;
   margin: 0 auto;
   margin-bottom: 86px;
   padding: 0;
@@ -32,15 +33,17 @@
     padding: 70px 0 74px 0;
 
     background-image: url("../img/questions-image-tablet.jpg");
-    background-size: 100% 100%;
+    background-size: 100%;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/questions-image-tablet@2x.jpg");
+      background-size: 100% auto;
     }
   }
 
   @media (max-width: $mobile-max-width) {
     padding: 0;
+
     background-image: none;
   }
 }
@@ -170,8 +173,9 @@
 }
 
 .questions__input--tel {
-  font-size: 14px;
   padding: 16px 15px 15px 26px;
+
+  font-size: 14px;
 }
 
 .questions__tel-wrapper::after {
