@@ -5,64 +5,75 @@ const linksSlide = document.querySelectorAll(".places-visit__link");
 const navigationMain = document.querySelector(".main-navigation");
 const navigationToggle = navigationMain.querySelector(".main-navigation__toggle");
 
+const formQuestions = document.querySelector(".questions__form");
 const buttonsPrices = document.querySelectorAll(".button--prices");
-const buttonCountries = document.querySelector(".button--countries");
-const popupBuy = document.querySelector(".modal-buy");
-const buttonClose = popupBuy.querySelector(".modal-buy__close");
+const buttonsCountries = document.querySelectorAll(".button--countries");
 
+const popupBuy = document.querySelector(".modal-buy");
+const buttonPopupBuyClose = popupBuy.querySelector(".modal-buy__close");
+const formBuy = popupBuy.querySelector(".modal-buy__form");
+const inputTel= formBuy.querySelector(".modal-buy__input--tel");
+
+
+const popupSuccess = document.querySelector(".modal-success");
+const buttonPopupSuccessClose = popupSuccess.querySelector(".modal-success__close");
 
 //Cлайдер для табов
-const changeSlide = function (imagesSlide, buttonsSlide, index) {
-  for (let i = 0; i < imagesSlide.length; i++) {
-    if (imagesSlide[i].classList.contains("countries__slider-item--current")) {
-      imagesSlide[i].classList.remove("countries__slider-item--current");
-    }
-  }
-  imagesSlide[index].classList.add("countries__slider-item--current");
+const changeSlide = (imageSlide, buttonSlide) => {
 
-  for (let q = 0; q < buttonsSlide.length; q++) {
-    if (buttonsSlide[q].classList.contains("countries__slider-button--current")) {
-      buttonsSlide[q].classList.remove("countries__slider-button--current");
+  imagesSlide.forEach((slide) => {
+    if (slide.classList.contains("countries__slider-item--current")) {
+      slide.classList.remove("countries__slider-item--current");
     }
-  }
-  buttonsSlide[index].classList.add("countries__slider-button--current");
+  });
+
+  buttonsSlide.forEach((button) => {
+    if (button.classList.contains("countries__slider-button--current")) {
+      button.classList.remove("countries__slider-button--current");
+    }
+  });
+
+  imageSlide.classList.add("countries__slider-item--current");
+  buttonSlide.classList.add("countries__slider-button--current");
 };
 
-for (let counter = 0; counter < buttonsSlide.length; counter++) {
-  buttonsSlide[counter].addEventListener("click", function () {
-    changeSlide(imagesSlide,buttonsSlide, counter);
+
+buttonsSlide.forEach((buttonSlide,index) => {
+  buttonSlide.addEventListener("click", () => {
+    changeSlide(imagesSlide[index],buttonSlide);
   });
-}
+});
 
 
 //Ссылки на табы
-const showSlide = function (imagesSlide, linksSlide, index) {
-  for (let i = 0; i < imagesSlide.length; i++) {
-    if (imagesSlide[i].classList.contains("countries__slider-item--current")) {
-      imagesSlide[i].classList.remove("countries__slider-item--current");
+const showSlide = (imageSlide, linkSlide) => {
+  imagesSlide.forEach((image) => {
+    if (image.classList.contains("countries__slider-item--current")) {
+      image.classList.remove("countries__slider-item--current");
     }
-  }
-  imagesSlide[index].classList.add("countries__slider-item--current");
+  });
 
-  for (let q = 0; q < linksSlide.length; q++) {
-    if (linksSlide[q].classList.contains("places-visit__link--curent")) {
-      linksSlide[q].classList.remove("places-visit__link--curent");
+  linksSlide.forEach((link) => {
+    if (link.classList.contains("places-visit__link--curent")) {
+      link.classList.remove("places-visit__link--curent");
     }
-  }
-  linksSlide[index].classList.add("places-visit__link--curent");
+  });
+
+  imageSlide.classList.add("countries__slider-item--current");
+  linkSlide.classList.add("places-visit__link--curent");
 };
 
-for (let counter = 0; counter < linksSlide.length; counter++) {
-  linksSlide[counter].addEventListener("click", function () {
-    showSlide(imagesSlide,linksSlide, counter);
+linksSlide.forEach((linkSlide,index) => {
+  linkSlide.addEventListener("click", () => {
+    showSlide(imagesSlide[index],linkSlide);
   });
-}
+});
 
 
-// Кнопка, навигация в планшетной, десктопной версии
+// Кнопка, навигация в планшетной, мобильной версии
 navigationMain.classList.remove("main-navigation--nojs");
 
-navigationToggle.addEventListener("click", function() {
+navigationToggle.addEventListener("click", () => {
   if (navigationMain.classList.contains("main-navigation--closed")) {
     navigationMain.classList.remove("main-navigation--closed");
     navigationMain.classList.add("main-navigation--opened");
@@ -73,19 +84,62 @@ navigationToggle.addEventListener("click", function() {
 });
 
 
-//Открытие модального окна
+//ФОРМА "У ВАС ОСТАЛИСЬ ВОПРОСЫ"
+
+formQuestions.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+    popupSuccess.classList.add("modal-success__show");
+
+});
+
+
+//ФОРМА "КУПИТЬ ТУР"
 buttonsPrices.forEach((buttonPrices) => {
-  buttonPrices.addEventListener("click", function (evt) {
+  buttonPrices.addEventListener("click", (evt) => {
   evt.preventDefault();
   popupBuy.classList.add("modal-buy__show");
+  inputTel.focus();
   });
 });
 
-buttonCountries.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  popupBuy.classList.add("modal-buy__show");
+buttonsCountries.forEach((buttonCountries) => {
+  buttonCountries.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    popupBuy.classList.add("modal-buy__show");
+    inputTel.focus();
+  });
 });
 
-buttonClose.addEventListener("click", function () {
+formBuy.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+    popupSuccess.classList.add("modal-success__show");
+});
+
+
+//закрытие окна "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
+buttonPopupSuccessClose.addEventListener("click", () => {
+  popupSuccess.classList.remove("modal-success__show");
+  if (popupBuy.classList.contains("modal-buy__show")) {
+    popupBuy.classList.remove("modal-buy__show");
+  }
+});
+
+//закрытие окна "КУПИТЬ ТУР" через кнопку
+buttonPopupBuyClose.addEventListener("click", () => {
   popupBuy.classList.remove("modal-buy__show");
+});
+
+//закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через Esc
+window.addEventListener("keydown", (evt) => {
+  if (evt.keyCode === 27) {
+    if (popupSuccess.classList.contains("modal-success__show")) {
+      evt.preventDefault();
+      popupSuccess.classList.remove("modal-success__show");
+    }
+
+    if (popupBuy.classList.contains("modal-buy__show")) {
+      evt.preventDefault();
+      popupBuy.classList.remove("modal-buy__show");
+    }
+  }
 });
