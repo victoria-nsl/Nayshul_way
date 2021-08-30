@@ -695,34 +695,40 @@
       </section>
     </footer>
 
-    <section class="modal-buy">
-      <h2 class="modal-buy__title">
-        Купить тур
-      </h2>
-      <form class="modal-buy__form" action="https://echo.htmlacademy.ru/" method="post">
-        <ul class="modal-buy__list">
-          <li class="modal-buy__item">
-            <label class="visually-hidden" for="telephone">Телефон</label>
-            <div  class="modal-buy__tel-wrapper">
-              <input class="modal-buy__input modal-buy__input--tel" id="telephone" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="10" required >
-            </div>
+    <section class="modal modal-buy">
+      <div class="modal__overlay"></div>
+      <div class="modal-buy__card">
+        <h2 class="modal-buy__title">
+          Купить тур
+        </h2>
+        <form class="modal-buy__form" action="https://echo.htmlacademy.ru/" method="post">
+          <ul class="modal-buy__list">
+            <li class="modal-buy__item">
+              <label class="visually-hidden" for="telephone">Телефон</label>
+              <div  class="modal-buy__tel-wrapper">
+                <input class="modal-buy__input modal-buy__input--tel" id="telephone" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="10" required >
+              </div>
 
-          </li>
-          <li class="modal-buy__item">
-            <label class="visually-hidden" for="e-mail">email</label>
-            <input class="modal-buy__input  modal-buy__input--email" id="e-mail" type="email" name="email" placeholder="E-mail">
-          </li>
-        </ul>
-        <button class="button button--modal-buy" type="submit">
-          отправить
-        </button>
-      </form>
-      <button class="modal-buy__close" type="button" aria-label="Закрыть"></button>
+            </li>
+            <li class="modal-buy__item">
+              <label class="visually-hidden" for="e-mail">email</label>
+              <input class="modal-buy__input  modal-buy__input--email" id="e-mail" type="email" name="email" placeholder="E-mail">
+            </li>
+          </ul>
+          <button class="button button--modal-buy" type="submit">
+            отправить
+          </button>
+        </form>
+        <button class="modal-buy__close" type="button" aria-label="Закрыть"></button>
+      </div>
     </section>
 
-    <div class="modal-success">
-      <p class="modal-success__message">Форма успешно отправлена, спасибо! :)</p>
-      <button class="modal-success__close" type="button" aria-label="Закрыть"></button>
+    <div class="modal modal-success">
+      <div class="modal__overlay"></div>
+      <div class="modal-success__card">
+        <p class="modal-success__message">Форма успешно отправлена, спасибо! :)</p>
+        <button class="modal-success__close" type="button" aria-label="Закрыть"></button>
+      </div>
     </div>
 
     <script src="js/scripts.min.js"></script>

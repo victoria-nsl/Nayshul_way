@@ -1,8 +1,9 @@
-.modal-success {
+.modal-success__card {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 60;
 
   display: none;
   width: 728px;
@@ -13,6 +14,7 @@
   text-align: center;
 
   background: $white-dark;
+  box-shadow: 0 4px 30px rgba($black-shadow, 0.1);
 
   @media (max-width: $mobile-max-width) {
     width: 288px;
