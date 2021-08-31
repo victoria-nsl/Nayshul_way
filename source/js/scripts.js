@@ -6,7 +6,6 @@ const linksSlide = document.querySelectorAll(".places-visit__link");
 const navigationMain = document.querySelector(".main-navigation");
 const navigationToggle = navigationMain.querySelector(".main-navigation__toggle");
 
-const formQuestions = document.querySelector(".questions__form");
 const buttonsPrices = document.querySelectorAll(".button--prices");
 const buttonsCountries = document.querySelectorAll(".button--countries");
 
@@ -14,13 +13,21 @@ const overlayPopup = document.querySelector(".modal__overlay");
 
 const popupBuy = document.querySelector(".modal-buy__card");
 const buttonPopupBuyClose = popupBuy.querySelector(".modal-buy__close");
-const formBuy = popupBuy.querySelector(".modal-buy__form");
-const inputTel= formBuy.querySelector(".modal-buy__input--tel");
 
 const popupSuccess = document.querySelector(".modal-success__card");
 const buttonPopupSuccessClose = popupSuccess.querySelector(".modal-success__close");
 
-//Cлайдер для табов
+const formBuy = popupBuy.querySelector(".modal-buy__form");
+const inputTelModal= formBuy.querySelector(".modal-buy__input--tel");
+const inputEmailModal= formBuy.querySelector(".modal-buy__input--email");
+
+const formQuestions = document.querySelector(".questions__form");
+const inputTelQuestions= formQuestions.querySelector(".questions__input--tel");
+const inputEmailQuestions= formQuestions.querySelector(".questions__input--email");
+
+
+/*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
+
 const changeSlide = (imageSlide, buttonSlide) => {
 
   imagesSlide.forEach((slide) => {
@@ -47,7 +54,8 @@ buttonsSlide.forEach((buttonSlide,index) => {
 });
 
 
-//Ссылки на табы
+/*=============ПЕРЕКЛЮЧЕНИЕ НА СЛАЙДЫ /ТАБЫ/ ПРИ НАЖАТИИ НА ССЫЛКИ В РАЗДЕЛЕ СТРАНЫ ============*/
+
 const showSlide = (imageSlide, linkSlide) => {
   imagesSlide.forEach((image) => {
     if (image.classList.contains("countries__slider-item--current")) {
@@ -72,7 +80,8 @@ linksSlide.forEach((linkSlide,index) => {
 });
 
 
-// Кнопка, навигация в планшетной, мобильной версии
+/*==============ОТКРЫТИЕ МЕНЮ /НАВИГАЦИИ/ В ПЛАНШЕТНОЙ И ДЕСКТОПНОЙ ВЕРСИИИ ================*/
+
 navigationMain.classList.remove("main-navigation--nojs");
 
 navigationToggle.addEventListener("click", () => {
@@ -85,23 +94,35 @@ navigationToggle.addEventListener("click", () => {
   }
 });
 
+/*======ПРОВЕРКА LocalStorage============*/
+let isStorageSupport = true;
+let storageTel = "";
+let storageEmail = "";
 
-//ФОРМА "У ВАС ОСТАЛИСЬ ВОПРОСЫ"
+try {
+  storageTel = localStorage.getItem("tel");
+  storageEmail = localStorage.getItem("email");
 
-formQuestions.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-    popupSuccess.classList.add("modal-success__show");
-    overlayPopup.classList.add("modal__show");
-});
+} catch (err) {
+    isStorageSupport = false;
+}
 
+/*========ОТКРЫТИЕ ФОРМЫ "КУПИТЬ ТУР"==========*/
 
-//ФОРМА "КУПИТЬ ТУР"
 buttonsPrices.forEach((buttonPrices) => {
   buttonPrices.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  popupBuy.classList.add("modal-buy__show");
-  overlayPopup.classList.add("modal__show");
-  inputTel.focus();
+    evt.preventDefault();
+    popupBuy.classList.add("modal-buy__show");
+    overlayPopup.classList.add("modal__show");
+
+    if(storageTel && storageEmail) {
+      inputTelModal.value = storageTel;
+      inputEmailModal.value = storageEmail;
+      inputTelModal.focus();
+    } else {
+      inputTelModal.focus();
+    }
+
   });
 });
 
@@ -110,34 +131,76 @@ buttonsCountries.forEach((buttonCountries) => {
     evt.preventDefault();
     popupBuy.classList.add("modal-buy__show");
     overlayPopup.classList.add("modal__show");
-    inputTel.focus();
+
+    if(storageTel && storageEmail) {
+      inputTelModal.value = storageTel;
+      inputEmailModal.value = storageEmail;
+      inputTelModal.focus();
+    } else {
+      inputTelModal.focus();
+    }
   });
 });
 
-formBuy.addEventListener('submit', (evt) => {
-  evt.preventDefault();
+/*=========ОТПРАВКА ФОРМ==============*/
+
+formBuy.addEventListener('submit', (evt)  => {
+  if (!inputTelModal.value || !inputEmailModal.value) {
+    evt.preventDefault();
+  } else {
+
+    if(isStorageSupport) {
+      localStorage.setItem("tel",  inputTelModal.value);
+      localStorage.setItem("email", inputEmailModal.value);
+    }
+
     popupSuccess.classList.add("modal-success__show");
+    popupBuy.classList.remove("modal-buy__show");
+  }
 });
 
+
+formQuestions.addEventListener('submit', (evt)  => {
+  if (!inputTelQuestions.value || !inputEmailQuestions.value) {
+    evt.preventDefault();
+  } else {
+
+    if(isStorageSupport) {
+      localStorage.setItem("tel",  inputTelQuestions.value);
+      localStorage.setItem("email", inputEmailQuestions.value);
+    }
+
+    popupSuccess.classList.add("modal-success__show");
+    overlayPopup.classList.add("modal__show");
+  }
+});
+
+/*================ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН========================*/
 
 //закрытие окна "КУПИТЬ ТУР" через кнопку
-buttonPopupBuyClose.addEventListener("click", () => {
-  popupBuy.classList.remove("modal-buy__show");
-  overlayPopup.classList.remove("modal__show");
-});
-
-//закрытие окна "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
-buttonPopupSuccessClose.addEventListener("click", () => {
-
-  if (popupSuccess.classList.contains("modal-success__show")) {
-    popupSuccess.classList.remove("modal-success__show");
-  }
+buttonPopupBuyClose.addEventListener("click", (evt) => {
 
   if (popupBuy.classList.contains("modal-buy__show")) {
+    evt.preventDefault();
     popupBuy.classList.remove("modal-buy__show");
   }
 
   if (overlayPopup.classList.contains("modal__show")) {
+    evt.preventDefault();
+    overlayPopup.classList.remove("modal__show");
+  }
+});
+
+//закрытие окна "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
+buttonPopupSuccessClose.addEventListener("click", (evt) => {
+
+  if (popupSuccess.classList.contains("modal-success__show")) {
+    evt.preventDefault();
+    popupSuccess.classList.remove("modal-success__show");
+  }
+
+  if (overlayPopup.classList.contains("modal__show")) {
+    evt.preventDefault();
     overlayPopup.classList.remove("modal__show");
   }
 });
