@@ -25,6 +25,9 @@ const formQuestions = document.querySelector(".questions__form");
 const inputTelQuestions= formQuestions.querySelector(".questions__input--tel");
 const inputEmailQuestions= formQuestions.querySelector(".questions__input--email");
 
+const KEY_ESCAPE= 'Escape';
+const KEY_ESC = 'Esc';
+
 
 /*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
 
@@ -109,43 +112,32 @@ try {
 
 /*========ОТКРЫТИЕ ФОРМЫ "КУПИТЬ ТУР"==========*/
 
+const onButtonOpenClick = (evt) => {
+  evt.preventDefault();
+  popupBuy.classList.add("modal-buy__show");
+  overlayPopup.classList.add("modal__show");
+
+  if(storageTel && storageEmail) {
+    inputTelModal.value = storageTel;
+    inputEmailModal.value = storageEmail;
+    inputTelModal.focus();
+  } else {
+    inputTelModal.focus();
+  }
+};
+
 buttonsPrices.forEach((buttonPrices) => {
-  buttonPrices.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    popupBuy.classList.add("modal-buy__show");
-    overlayPopup.classList.add("modal__show");
-
-    if(storageTel && storageEmail) {
-      inputTelModal.value = storageTel;
-      inputEmailModal.value = storageEmail;
-      inputTelModal.focus();
-    } else {
-      inputTelModal.focus();
-    }
-
-  });
+  buttonPrices.addEventListener("click", onButtonOpenClick)
 });
 
 buttonsCountries.forEach((buttonCountries) => {
-  buttonCountries.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    popupBuy.classList.add("modal-buy__show");
-    overlayPopup.classList.add("modal__show");
-
-    if(storageTel && storageEmail) {
-      inputTelModal.value = storageTel;
-      inputEmailModal.value = storageEmail;
-      inputTelModal.focus();
-    } else {
-      inputTelModal.focus();
-    }
-  });
+  buttonCountries.addEventListener("click",onButtonOpenClick)
 });
 
 /*=========ОТПРАВКА ФОРМ==============*/
 
 formBuy.addEventListener('submit', (evt)  => {
-  if (!inputTelModal.value || !inputEmailModal.value) {
+  if (!inputTelModal.value) {
     evt.preventDefault();
   } else {
 
@@ -161,7 +153,7 @@ formBuy.addEventListener('submit', (evt)  => {
 
 
 formQuestions.addEventListener('submit', (evt)  => {
-  if (!inputTelQuestions.value || !inputEmailQuestions.value) {
+  if (!inputTelQuestions.value) {
     evt.preventDefault();
   } else {
 
@@ -177,64 +169,44 @@ formQuestions.addEventListener('submit', (evt)  => {
 
 /*================ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН========================*/
 
-//закрытие окна "КУПИТЬ ТУР" через кнопку
-buttonPopupBuyClose.addEventListener("click", (evt) => {
-
+const closePopup = () => {
   if (popupBuy.classList.contains("modal-buy__show")) {
-    evt.preventDefault();
     popupBuy.classList.remove("modal-buy__show");
   }
 
-  if (overlayPopup.classList.contains("modal__show")) {
-    evt.preventDefault();
-    overlayPopup.classList.remove("modal__show");
-  }
-});
-
-//закрытие окна "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
-buttonPopupSuccessClose.addEventListener("click", (evt) => {
-
   if (popupSuccess.classList.contains("modal-success__show")) {
-    evt.preventDefault();
     popupSuccess.classList.remove("modal-success__show");
   }
 
   if (overlayPopup.classList.contains("modal__show")) {
-    evt.preventDefault();
     overlayPopup.classList.remove("modal__show");
   }
-});
+};
+
+//закрытие окoн "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
+const onButtonCloseClick = (evt) => {
+  evt.preventDefault();
+  closePopup();
+}
+buttonPopupBuyClose.addEventListener("click", onButtonCloseClick);
+buttonPopupSuccessClose.addEventListener("click", onButtonCloseClick);
 
 //закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через Esc
-window.addEventListener("keydown", (evt) => {
-  if (evt.keyCode === 27) {
+const isEscEvent = (evt) =>  evt.key ===  KEY_ESCAPE || evt.key === KEY_ESC;
+
+const onDocumentEscKeydown = (evt) => {
+  if (isEscEvent) {
     evt.preventDefault();
-
-    if (popupSuccess.classList.contains("modal-success__show")) {
-      popupSuccess.classList.remove("modal-success__show");
-    }
-
-    if (popupBuy.classList.contains("modal-buy__show")) {
-      popupBuy.classList.remove("modal-buy__show");
-    }
-
-    if ( overlayPopup.classList.contains("modal__show")) {
-      overlayPopup.classList.remove("modal__show");
-    }
+    closePopup();
   }
-});
+};
+document.addEventListener("keydown", onDocumentEscKeydown);
+
 
 //закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через overlay
-overlayPopup.addEventListener("click", () => {
-  if (popupSuccess.classList.contains("modal-success__show")) {
-    popupSuccess.classList.remove("modal-success__show");
-  }
+const onOverlayClick = (evt) => {
+  evt.preventDefault();
+  closePopup();
+};
 
-  if (popupBuy.classList.contains("modal-buy__show")) {
-    popupBuy.classList.remove("modal-buy__show");
-  }
-
-  if (overlayPopup.classList.contains("modal__show")) {
-    overlayPopup.classList.remove("modal__show");
-  }
-});
+overlayPopup.addEventListener("click", onOverlayClick);
