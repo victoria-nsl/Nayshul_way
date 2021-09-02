@@ -25,10 +25,6 @@ const formQuestions = document.querySelector(".questions__form");
 const inputTelQuestions= formQuestions.querySelector(".questions__input--tel");
 const inputEmailQuestions= formQuestions.querySelector(".questions__input--email");
 
-const KEY_ESCAPE= 'Escape';
-const KEY_ESC = 'Esc';
-
-
 /*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
 
 const changeSlide = (imageSlide, buttonSlide) => {
@@ -91,10 +87,12 @@ navigationToggle.addEventListener("click", () => {
   if (navigationMain.classList.contains("main-navigation--closed")) {
     navigationMain.classList.remove("main-navigation--closed");
     navigationMain.classList.add("main-navigation--opened");
-  } else {
-    navigationMain.classList.add("main-navigation--closed");
-    navigationMain.classList.remove("main-navigation--opened");
+    return
   }
+
+  navigationMain.classList.add("main-navigation--closed");
+  navigationMain.classList.remove("main-navigation--opened");
+
 });
 
 /*======ПРОВЕРКА LocalStorage============*/
@@ -192,10 +190,9 @@ buttonPopupBuyClose.addEventListener("click", onButtonCloseClick);
 buttonPopupSuccessClose.addEventListener("click", onButtonCloseClick);
 
 //закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через Esc
-const isEscEvent = (evt) =>  evt.key ===  KEY_ESCAPE || evt.key === KEY_ESC;
 
 const onDocumentEscKeydown = (evt) => {
-  if (isEscEvent) {
+  if (evt.keyCode === 27) {
     evt.preventDefault();
     closePopup();
   }

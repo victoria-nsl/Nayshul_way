@@ -146,3 +146,7 @@
 .modal-buy__show {
   display: block;
 }
+
+.modal-buy__close:hover {
+  transform: scale(1.2);
+}
