@@ -6,8 +6,8 @@ const linksSlide = document.querySelectorAll(".places-visit__link");
 const navigationMain = document.querySelector(".main-navigation");
 const navigationToggle = navigationMain.querySelector(".main-navigation__toggle");
 
-const buttonsPrices = document.querySelectorAll(".button--prices");
-const buttonsCountries = document.querySelectorAll(".button--countries");
+const sliderListCountries = document.querySelector(".countries__slider-list");
+const pricesList = document.querySelector(".prices__list");
 
 const overlayPopup = document.querySelector(".modal__overlay");
 
@@ -111,26 +111,23 @@ try {
 /*========ОТКРЫТИЕ ФОРМЫ "КУПИТЬ ТУР"==========*/
 
 const onButtonOpenClick = (evt) => {
-  evt.preventDefault();
-  popupBuy.classList.add("modal-buy__show");
-  overlayPopup.classList.add("modal__show");
+  if(evt.target.matches("a")) {
+    evt.preventDefault();
+    popupBuy.classList.add("modal-buy__show");
+    overlayPopup.classList.add("modal__show");
 
-  if(storageTel && storageEmail) {
-    inputTelModal.value = storageTel;
-    inputEmailModal.value = storageEmail;
-    inputTelModal.focus();
-  } else {
-    inputTelModal.focus();
+    if(storageTel && storageEmail) {
+      inputTelModal.value = storageTel;
+      inputEmailModal.value = storageEmail;
+      inputTelModal.focus();
+    } else {
+      inputTelModal.focus();
+    }
   }
 };
 
-buttonsPrices.forEach((buttonPrices) => {
-  buttonPrices.addEventListener("click", onButtonOpenClick)
-});
-
-buttonsCountries.forEach((buttonCountries) => {
-  buttonCountries.addEventListener("click",onButtonOpenClick)
-});
+sliderListCountries.addEventListener("click",onButtonOpenClick);
+pricesList.addEventListener("click",onButtonOpenClick);
 
 /*=========ОТПРАВКА ФОРМ==============*/
 
