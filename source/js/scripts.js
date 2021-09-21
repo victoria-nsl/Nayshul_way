@@ -9,6 +9,7 @@ const navigationToggle = navigationMain.querySelector(".main-navigation__toggle"
 const sliderListCountries = document.querySelector(".countries__slider-list");
 const pricesList = document.querySelector(".prices__list");
 
+const body = document.querySelector(".page-body");
 const overlayPopup = document.querySelector(".modal__overlay");
 
 const popupBuy = document.querySelector(".modal-buy__card");
@@ -115,6 +116,7 @@ const onButtonOpenClick = (evt) => {
     evt.preventDefault();
     popupBuy.classList.add("modal-buy__show");
     overlayPopup.classList.add("modal__show");
+    body.classList.add("page-body--no-scroll");
 
     if(storageTel && storageEmail) {
       inputTelModal.value = storageTel;
@@ -143,6 +145,7 @@ formBuy.addEventListener('submit', (evt)  => {
 
     popupSuccess.classList.add("modal-success__show");
     popupBuy.classList.remove("modal-buy__show");
+    body.classList.add("page-body--no-scroll");
   }
 });
 
@@ -159,6 +162,7 @@ formQuestions.addEventListener('submit', (evt)  => {
 
     popupSuccess.classList.add("modal-success__show");
     overlayPopup.classList.add("modal__show");
+    body.classList.add("page-body--no-scroll");
   }
 });
 
@@ -175,6 +179,7 @@ const closePopup = () => {
 
   if (overlayPopup.classList.contains("modal__show")) {
     overlayPopup.classList.remove("modal__show");
+    body.classList.remove("page-body--no-scroll");
   }
 };
 
