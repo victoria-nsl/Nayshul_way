@@ -45,5 +45,8 @@
   ],
   "engines": {
     "node": "14.15.0"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001276"
   }
 }

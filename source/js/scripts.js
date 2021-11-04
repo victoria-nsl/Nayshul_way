@@ -3,13 +3,15 @@ const imagesSlide = document.querySelectorAll(".countries__slider-item");
 const buttonsSlide = document.querySelectorAll(".countries__slider-button");
 const linksSlide = document.querySelectorAll(".places-visit__link");
 
+const overlayNavigationMain = document.querySelector(".page-header__overlay");
 const navigationMain = document.querySelector(".main-navigation");
 const navigationToggle = navigationMain.querySelector(".main-navigation__toggle");
+const linksNavigationMain = navigationMain.querySelectorAll('.main-navigation__link');
 
 const sliderListCountries = document.querySelector(".countries__slider-list");
 const pricesList = document.querySelector(".prices__list");
 
-const body = document.querySelector(".page-body");
+const body = document.body;
 const overlayPopup = document.querySelector(".modal__overlay");
 
 const popupBuy = document.querySelector(".modal-buy__card");
@@ -26,7 +28,11 @@ const formQuestions = document.querySelector(".questions__form");
 const inputTelQuestions= formQuestions.querySelector(".questions__input--tel");
 const inputEmailQuestions= formQuestions.querySelector(".questions__input--email");
 
+const buttonWatchTour = document.querySelector(".button--travel-europe");
+
 /*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
+
+sliderListCountries.classList.remove("countries__slider-list--nojs");
 
 const changeSlide = (imageSlide, buttonSlide) => {
 
@@ -84,17 +90,57 @@ linksSlide.forEach((linkSlide,index) => {
 
 navigationMain.classList.remove("main-navigation--nojs");
 
+
+const closeMenu = () => {
+  navigationMain.classList.add('main-navigation--closed');
+  navigationMain.classList.remove('main-navigation--opened');
+  overlayNavigationMain.classList.remove('page-header__overlay--show');
+  body.classList.remove('page-body--no-scroll');
+};
+
+const openMenu = () => {
+  navigationMain.classList.remove('main-navigation--closed');
+  navigationMain.classList.add('main-navigation--opened');
+  overlayNavigationMain.classList.add('page-header__overlay--show');
+  body.classList.add('page-body--no-scroll');
+};
+
 navigationToggle.addEventListener("click", () => {
   if (navigationMain.classList.contains("main-navigation--closed")) {
-    navigationMain.classList.remove("main-navigation--closed");
-    navigationMain.classList.add("main-navigation--opened");
+    openMenu();
     return
   }
-
-  navigationMain.classList.add("main-navigation--closed");
-  navigationMain.classList.remove("main-navigation--opened");
-
+  closeMenu();
 });
+
+
+//Плавная прокрутка
+
+const scrollSmoothly = (anchorLink) => {
+  const blockId = anchorLink.getAttribute('href').substring(1);
+
+  document.getElementById(blockId).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+};
+
+linksNavigationMain.forEach((linkNavigationMain) => {
+  linkNavigationMain.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    scrollSmoothly(evt.target);
+    if (navigationMain.classList.contains('main-navigation--opened')) {
+      closeMenu();
+    }
+  });
+});
+
+buttonWatchTour.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  scrollSmoothly(evt.target);
+});
+
+
 
 /*======ПРОВЕРКА LocalStorage============*/
 let isStorageSupport = true;
