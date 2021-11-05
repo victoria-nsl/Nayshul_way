@@ -2,20 +2,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 94.7%;
-  max-width: 1170px;
+  width: 100%;
+  max-width: 1224px;
   margin: 0 auto;
   padding: 36px 27px 32px 27px;
+  box-sizing: border-box;
 
   @media (max-width: $tablet-max-width) {
     position: relative;
 
     width: 100%;
-    padding: 17px 0 15px 0;
+    max-width: 100%;
+    padding: 17px 0 12px 0;
   }
 
   @media (max-width: $mobile-max-width) {
-    padding: 18px 0 13px 0;
+    padding: 18px 0 11px 0;
   }
 }
 

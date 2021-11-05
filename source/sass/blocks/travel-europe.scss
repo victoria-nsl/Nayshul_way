@@ -1,21 +1,22 @@
 .travel-europe {
   width: 100vw;
-  margin-bottom: -60px;
+  min-height: 860px;
+  margin-bottom: 200px;
 
   @media (max-width: $tablet-max-width) {
-    margin-bottom: -63px;
+    min-height: 344px;
+    margin-bottom: 80px;
   }
 
   @media (max-width: $mobile-max-width) {
-    margin-bottom: 80px;
+    min-height: 235px;
   }
 }
 
 .travel-europe__image-block {
-  width: 21%;
+  width: 412px;
   margin: 0 auto;
-  padding: 185px 23% 486px 56%;
-
+  padding: 185px 22.5% 486px 56%;
 
   background-color: $blue-background;
   background-image: url("../img/travel-europe-desktop.jpg");
@@ -29,7 +30,7 @@
 
   @media (max-width: $tablet-max-width) {
     width: 52%;
-    padding: 58px 24% 208px 24%;
+    padding: 60px 24% 208px 24%;
 
     background-image: url("../img/travel-europe-tablet.jpg");
 
@@ -40,7 +41,7 @@
 
   @media (max-width: $mobile-max-width) {
     width: 92%;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     padding: 81px 3% 81px 5%;
 
     text-align: center;
@@ -85,13 +86,11 @@
 
 .travel-europe__text-block {
   margin-top: -486px;
-  margin-bottom: 557px;
   padding-left: 56%;
 
   @media (max-width: $tablet-max-width) {
     width: 52%;
     margin-top: -224px;
-    margin-bottom: 224px;
     padding: 0 24% 0 24%;
 
     text-align: center;
