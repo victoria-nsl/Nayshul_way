@@ -1,5 +1,4 @@
 .travel-europe {
-  width: 100vw;
   min-height: 860px;
   margin-bottom: 200px;
 
@@ -14,7 +13,7 @@
 }
 
 .travel-europe__image-block {
-  width: 412px;
+  width: 21.5%;
   margin: 0 auto;
   padding: 185px 22.5% 486px 56%;
 
@@ -68,10 +67,11 @@
   @media (max-width: $tablet-max-width) {
     width: 398px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 31px;
 
     font-size: 30px;
     line-height: 150%;
+    text-align: center;
   }
 
   @media (max-width: $mobile-max-width) {
