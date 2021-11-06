@@ -79,6 +79,10 @@
   color: $scarlet;
 }
 
+.countries__slider--nojs .countries__slider-button--current {
+  color: rgba($dark, 0.3);
+}
+
 .countries__slider-button:hover {
   color: rgba($dark, 0.5);
 }
@@ -103,7 +107,7 @@
   display: block;
 }
 
-.countries__slider-list--nojs .countries__slider-item {
+.countries__slider--nojs .countries__slider-item {
   display: block;
   margin-bottom: 50px;
 }

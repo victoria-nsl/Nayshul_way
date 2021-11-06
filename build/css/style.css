@@ -772,6 +772,9 @@ img {
 .countries__slider-button--current {
   color: #fe7865; }
 
+.countries__slider--nojs .countries__slider-button--current {
+  color: rgba(44, 46, 63, 0.3); }
+
 .countries__slider-button:hover {
   color: rgba(44, 46, 63, 0.5); }
 
@@ -791,7 +794,7 @@ img {
 .countries__slider-item--current {
   display: block; }
 
-.countries__slider-list--nojs .countries__slider-item {
+.countries__slider--nojs .countries__slider-item {
   display: block;
   margin-bottom: 50px; }
 
@@ -1376,14 +1379,17 @@ img {
   margin-bottom: 20px; }
   @media (max-width: 1023px) {
     .questions__list {
+      width: 558px;
+      margin: 0 auto;
       margin-bottom: 21px; } }
   @media (max-width: 767px) {
     .questions__list {
       flex-direction: column;
+      width: 100%;
       margin-bottom: 20px; } }
 
 .questions__item {
-  width: 269px;
+  width: 48.2%;
   margin: 0 auto;
   margin-bottom: 5px; }
   @media (max-width: 1023px) {
@@ -1399,8 +1405,8 @@ img {
     margin-bottom: 20px; } }
 
 .questions__input {
-  width: 269px;
-  padding: 16px 15px 15px 15px;
+  width: 100%;
+  padding: 16px 5.5% 15px 5.5%;
   box-sizing: border-box;
   font: inherit;
   font-weight: 400;
@@ -1409,6 +1415,12 @@ img {
   color: #141517;
   border: 1px solid rgba(44, 46, 63, 0.3);
   border-radius: 0; }
+  .questions__input::placeholder {
+    color: #141517;
+    opacity: 0.7; }
+  @media (max-width: 1023px) {
+    .questions__input {
+      padding: 16px 15px 15px 15px; } }
   @media (max-width: 767px) {
     .questions__input {
       width: 100%; } }
@@ -1420,8 +1432,14 @@ img {
   position: relative; }
 
 .questions__input--tel {
-  padding: 16px 15px 15px 26px;
-  font-size: 14px; }
+  padding: 16px 3% 15px 9.6%;
+  font: inherit;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px; }
+  @media (max-width: 1023px) {
+    .questions__input--tel {
+      padding: 16px 15px 15px 26px; } }
 
 .questions__tel-wrapper::after {
   position: absolute;
@@ -1670,9 +1688,7 @@ img {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .modal-buy__show-overlay {
-  display: block;
-  animation-name: modal-appearance;
-  animation-duration: 1s; }
+  display: block; }
 
 .modal-buy__card {
   position: absolute;
@@ -1690,7 +1706,9 @@ img {
   background-repeat: no-repeat;
   background-position: start center;
   background-size: 46% 100%;
-  box-shadow: 0 4px 30px rgba(41, 54, 66, 0.1); }
+  box-shadow: 0 4px 30px rgba(41, 54, 66, 0.1);
+  animation-name: modal-appearance;
+  animation-duration: 1s; }
   @media (min-resolution: 2dppx) {
     .modal-buy__card {
       background-image: url("../img/modal-desktop@2x.jpg");
@@ -1794,9 +1812,9 @@ img {
 
 @keyframes modal-appearance {
   0% {
-    transform: scale(0); }
+    transform: scale(0) translate(-50%, -50%); }
   100% {
-    transform: scale(1); } }
+    transform: scale(1) translate(-50%, -50%); } }
 
 .modal-success {
   position: fixed;

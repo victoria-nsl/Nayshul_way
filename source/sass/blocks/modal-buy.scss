@@ -16,9 +16,6 @@
 
 .modal-buy__show-overlay {
   display: block;
-
-  animation-name: modal-appearance;
-  animation-duration: 1s;
 }
 
 .modal-buy__card {
@@ -42,6 +39,9 @@
   background-size: 46% 100%;
 
   box-shadow: 0 4px 30px rgba($black-shadow, 0.1);
+
+  animation-name: modal-appearance;
+  animation-duration: 1s;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/modal-desktop@2x.jpg");
@@ -172,10 +172,10 @@
 
 @keyframes modal-appearance {
   0% {
-    transform: scale(0);
+    transform: scale(0) translate(-50%, -50%);
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1) translate(-50%, -50%);
   }
 }

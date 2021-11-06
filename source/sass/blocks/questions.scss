@@ -116,17 +116,20 @@
   margin-bottom: 20px;
 
   @media (max-width: $tablet-max-width) {
+    width: 558px;
+    margin: 0 auto;
     margin-bottom: 21px;
   }
 
   @media (max-width: $mobile-max-width) {
     flex-direction: column;
+    width: 100%;
     margin-bottom: 20px;
   }
 }
 
 .questions__item {
-  width: 269px;
+  width: 48.2%;
   margin: 0 auto;
   margin-bottom: 5px;
 
@@ -147,8 +150,8 @@
 }
 
 .questions__input {
-  width: 269px;
-  padding: 16px 15px 15px 15px;
+  width: 100%;
+  padding: 16px 5.5% 15px 5.5%;
   box-sizing: border-box;
 
   font: inherit;
@@ -159,6 +162,15 @@
 
   border: 1px solid rgba($dark, 0.3);
   border-radius: 0;
+
+  &::placeholder {
+    color: $darkest;
+    opacity: 0.7;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    padding: 16px 15px 15px 15px;
+  }
 
   @media (max-width: $mobile-max-width) {
     width: 100%;
@@ -174,9 +186,16 @@
 }
 
 .questions__input--tel {
-  padding: 16px 15px 15px 26px;
+  padding: 16px 3% 15px 9.6%;
 
-  font-size: 14px;
+  font: inherit;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 16px 15px 15px 26px;
+  }
 }
 
 .questions__tel-wrapper::after {

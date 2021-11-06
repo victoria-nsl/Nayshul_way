@@ -9,9 +9,9 @@ const linksNavigationMain = navigationMain.querySelectorAll('.main-navigation__l
 
 const linksSlide = document.querySelectorAll('.places-visit__link');
 
-const buttonsSlide = document.querySelectorAll('.countries__slider-button');
-const sliderListCountries = document.querySelector('.countries__slider-list');
-const imagesSlide = sliderListCountries.querySelectorAll('.countries__slider-item');
+const sliderCountries = document.querySelector('.countries__slider');
+const buttonsSlide = sliderCountries.querySelectorAll('.countries__slider-button');
+const imagesSlide = sliderCountries.querySelectorAll('.countries__slider-item');
 
 const pricesList = document.querySelector('.prices__list');
 
@@ -84,37 +84,9 @@ navigationToggle.addEventListener('click', () => {
   closeMenu();
 });
 
-/*=============ПЕРЕКЛЮЧЕНИЕ НА СЛАЙДЫ /ТАБЫ/ ПРИ НАЖАТИИ НА ССЫЛКИ В РАЗДЕЛЕ СТРАНЫ ============*/
-
-const showSlide = (imageSlide, linkSlide) => {
-  imagesSlide.forEach((image) => {
-    if (image.classList.contains('countries__slider-item--current')) {
-      image.classList.remove('countries__slider-item--current');
-    }
-  });
-
-  linksSlide.forEach((link) => {
-    if (link.classList.contains('places-visit__link--curent')) {
-      link.classList.remove('places-visit__link--curent');
-    }
-  });
-
-  imageSlide.classList.add('countries__slider-item--current');
-  linkSlide.classList.add('places-visit__link--curent');
-  scrollSmoothly(linkSlide);
-};
-
-linksSlide.forEach((linkSlide,index) => {
-  linkSlide.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    showSlide(imagesSlide[index],linkSlide);
-  });
-});
-
-
 /*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
 
-sliderListCountries.classList.remove('countries__slider-list--nojs');
+sliderCountries.classList.remove('countries__slider--nojs');
 
 const changeSlide = (imageSlide, buttonSlide) => {
   imagesSlide.forEach((slide) => {
@@ -122,17 +94,14 @@ const changeSlide = (imageSlide, buttonSlide) => {
       slide.classList.remove('countries__slider-item--current');
     }
   });
-
   buttonsSlide.forEach((button) => {
     if (button.classList.contains('countries__slider-button--current')) {
       button.classList.remove('countries__slider-button--current');
     }
   });
-
   imageSlide.classList.add('countries__slider-item--current');
   buttonSlide.classList.add('countries__slider-button--current');
 };
-
 
 buttonsSlide.forEach((buttonSlide,index) => {
   buttonSlide.addEventListener('click', () => {
@@ -140,6 +109,25 @@ buttonsSlide.forEach((buttonSlide,index) => {
   });
 });
 
+/*=====ПЕРЕКЛЮЧЕНИЕ НА СЛАЙДЫ /ТАБЫ/ ПРИ НАЖАТИИ НА ССЫЛКИ В РАЗДЕЛЕ СТРАНЫ ============*/
+
+const showSlide = (imageSlide, linkSlide, buttonSlide) => {
+  linksSlide.forEach((link) => {
+    if (link.classList.contains('places-visit__link--curent')) {
+      link.classList.remove('places-visit__link--curent');
+    }
+  });
+  linkSlide.classList.add('places-visit__link--curent');
+  changeSlide(imageSlide,buttonSlide);
+  scrollSmoothly(linkSlide);
+};
+
+linksSlide.forEach((linkSlide,index) => {
+  linkSlide.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    showSlide(imagesSlide[index],linkSlide, buttonsSlide[index]);
+  });
+});
 
 
 /*======ПРОВЕРКА LocalStorage============*/
