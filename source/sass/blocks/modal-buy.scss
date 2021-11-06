@@ -118,6 +118,7 @@
   color: $black-light;
 
   border: 1px solid $grey;
+  border-radius: 0;
 
   @media (max-width: $mobile-max-width) {
     width: 288px;
