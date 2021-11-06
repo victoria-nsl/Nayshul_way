@@ -66,7 +66,6 @@ buttonWatchTour.addEventListener('click', (evt) => {
 /*==============ОТКРЫТИЕ МЕНЮ /НАВИГАЦИИ/ В ПЛАНШЕТНОЙ И ДЕСКТОПНОЙ ВЕРСИИИ ================*/
 navigationMain.classList.remove('main-navigation--nojs');
 
-
 const closeMenu = () => {
   navigationMain.classList.add('main-navigation--closed');
   navigationMain.classList.remove('main-navigation--opened');
@@ -120,7 +119,6 @@ linksSlide.forEach((linkSlide,index) => {
 sliderListCountries.classList.remove('countries__slider-list--nojs');
 
 const changeSlide = (imageSlide, buttonSlide) => {
-
   imagesSlide.forEach((slide) => {
     if (slide.classList.contains('countries__slider-item--current')) {
       slide.classList.remove('countries__slider-item--current');
@@ -269,6 +267,7 @@ formBuy.addEventListener('submit', (evt)  => {
     }
   }
 });
+
 
 /*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
 
