@@ -1,9 +1,29 @@
-.modal-success__card {
+.modal-success {
   position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: none;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: rgba($black, 0.5);
+}
+
+.modal-success__show-overlay {
+  display: block;
+}
+
+.modal-success__card {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 60;
+  z-index: 110;
 
   display: none;
   width: 728px;
@@ -21,6 +41,10 @@
     margin: 0 auto;
     padding: 150px 20px;
   }
+}
+
+.modal-success__show-card {
+  display: block;
 }
 
 .modal-success__message {
@@ -43,10 +67,6 @@
   border: none;
 
   cursor: pointer;
-}
-
-.modal-success__show {
-  display: block;
 }
 
 .modal-success__close:hover {

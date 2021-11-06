@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Лучшие путешествия по Европе">
     <title>HTML Academy: Путешествие по Европе</title>
-    <link rel="preload" href="fonts/montserrat-regular.woff2" as="font">
-    <link rel="preload" href="fonts/montserrat-medium.woff2" as="font">
-    <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font">
+    <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" crossorigin="anonymous">
     <link href="css/style.min.css" rel="stylesheet">
   </head>
 
@@ -220,7 +221,7 @@
                       нашего путешествия в Греции. После покарения скал из песчанника и обломочной горной породы, достигающих
                       в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры.
                     </p>
-                    <a class="button button--countries" href="#">
+                    <a class="button button--countries" data-buy href="#">
                       купить тур сейчас
                     </a>
                   </div>
@@ -269,7 +270,7 @@
                       Вначале кажется, что на пляже вас встречает обычный, правда невероятно белоснежный и слишком крупный песок.
                       Однако, присмотревшись, можно понять, что это не песок, а камни, перетёртые до такого мелкого состояния.
                     </p>
-                    <a class="button button--countries" href="#">
+                    <a class="button button--countries" data-buy href="#">
                       купить тур сейчас
                     </a>
                   </div>
@@ -316,7 +317,7 @@
                       лесистой местности возле Охридского озера и Самуиловой твердыни. А также мы заберемся на вершину
                       горы Татичев Камен где находится  археологический памятник Кокино в длину около 100 метров.
                     </p>
-                    <a class="button button--countries" href="#">
+                    <a class="button button--countries" data-buy href="#">
                       купить тур сейчас
                     </a>
                   </div>
@@ -364,7 +365,7 @@
                       Черногория удивит нас самым большим в Европе каньоном реки Тара, который в некоторых местах
                       высотой берегов доходит до 1300 метров, а шириной не превышает трех. При этом длина каньона составляет 80 км.
                     </p>
-                    <a class="button button--countries" href="#">
+                    <a class="button button--countries" data-buy href="#">
                       купить тур сейчас
                     </a>
                   </div>
@@ -411,7 +412,7 @@
                       через 5 освещенных залов, украшенных удивительными нерукотворными скульптурами —  сталактитами и сталагмитами —
                       формировавшимися тысячи и тысячи лет.
                     </p>
-                    <a class="button button--countries" href="#">
+                    <a class="button button--countries" data-buy href="#">
                       купить тур сейчас
                     </a>
                   </div>
@@ -499,7 +500,7 @@
                     </span>
                   </li>
                 </ul>
-                <a class="button button--prices prices__button" href="#">
+                <a class="button button--prices prices__button" data-buy href="#">
                   купить тур сейчас
                 </a>
               </li>
@@ -554,7 +555,7 @@
                     </span>
                   </li>
                 </ul>
-                <a class="button button--prices prices__button" href="#">
+                <a class="button button--prices prices__button" data-buy href="#">
                   купить тур сейчас
                 </a>
               </li>
@@ -696,8 +697,7 @@
       </section>
     </footer>
 
-    <section class="modal modal-buy">
-      <div class="modal__overlay"></div>
+    <section class="modal-buy">
       <div class="modal-buy__card">
         <h2 class="modal-buy__title">
           Купить тур
@@ -724,13 +724,13 @@
       </div>
     </section>
 
-    <div class="modal modal-success">
-      <div class="modal__overlay"></div>
+    <section class="modal-success">
+      <h2 class="visually-hidden">Сообщение об успехе</h2>
       <div class="modal-success__card">
         <p class="modal-success__message">Форма успешно отправлена, спасибо! :)</p>
         <button class="modal-success__close" type="button" aria-label="Закрыть"></button>
       </div>
-    </div>
+    </section>
 
     <script src="js/scripts.min.js"></script>
   </body>
