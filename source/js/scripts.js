@@ -21,14 +21,12 @@ const inputEmailQuestions= formQuestions.querySelector('.questions__input--email
 const buttonQuestions= formQuestions.querySelector('.button--questions');
 
 const overlayPopupBuy = document.querySelector('.modal-buy');
-const popupBuy = overlayPopupBuy.querySelector('.modal-buy__card');
-const buttonPopupBuyClose = popupBuy.querySelector('.modal-buy__close');
+const buttonPopupBuyClose = overlayPopupBuy.querySelector('.modal-buy__close');
 
 const overlayPopupSuccess = document.querySelector('.modal-success');
-const popupSuccess = overlayPopupSuccess.querySelector('.modal-success__card');
-const buttonPopupSuccessClose = popupSuccess.querySelector('.modal-success__close');
+const buttonPopupSuccessClose = overlayPopupSuccess.querySelector('.modal-success__close');
 
-const formBuy = popupBuy.querySelector('.modal-buy__form');
+const formBuy = overlayPopupBuy.querySelector('.modal-buy__form');
 const inputTelModal= formBuy.querySelector('.modal-buy__input--tel');
 const inputEmailModal= formBuy.querySelector('.modal-buy__input--email');
 const buttonModal= formBuy.querySelector('.button--modal-buy');
@@ -167,63 +165,41 @@ setItemLocalStorage (inputTelQuestions, inputEmailQuestions);
 
 
 /*========ОТКРЫТИЕ ФОРМЫ "КУПИТЬ ТУР"==========*/
-const openPopup = () => {
-  popupBuy.classList.add('modal-buy__show-card');
-  overlayPopupBuy.classList.add('modal-buy__show-overlay');
-  body.classList.add('page-body--no-scroll');
-  inputTelModal.focus();
-  setItemLocalStorage (inputTelModal, inputEmailModal);
-};
 
-buttonsBuy.forEach((buttonBuy) => {
-  buttonBuy.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    openPopup();
-  });
-});
-
-/*================ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН========================*/
-const closePopup = () => {
-  if (popupBuy.classList.contains('modal-buy__show-card')) {
-    popupBuy.classList.remove('modal-buy__show-card');
-  }
-
-  if (popupSuccess.classList.contains('modal-success__show-card')) {
-    popupSuccess.classList.remove('modal-success__show-card');
-  }
-
-  if (overlayPopupBuy.classList.contains('modal-buy__show-overlay')) {
-    overlayPopupBuy.classList.remove('modal-buy__show-overlay');
-    body.classList.remove('page-body--no-scroll');
-  }
-
-  if (overlayPopupSuccess.classList.contains('modal-success__show-overlay')) {
-    overlayPopupSuccess.classList.remove('modal-success__show-overlay');
-    body.classList.remove('page-body--no-scroll');
-  }
-
-  setItemLocalStorage (inputTelQuestions, inputEmailQuestions);
-};
-
-//закрытие окoн "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через кнопку
-const onButtonCloseClick = (evt) => {
-  evt.preventDefault();
-  closePopup();
-}
-buttonPopupBuyClose.addEventListener('click', onButtonCloseClick);
-buttonPopupSuccessClose.addEventListener('click', onButtonCloseClick);
-
-//закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через Esc
 const onDocumentEscKeydown = (evt) => {
   if (evt.keyCode === 27) {
     evt.preventDefault();
     closePopup();
   }
 };
-document.addEventListener('keydown', onDocumentEscKeydown);
 
+const openPopupBuy = () => {
+  overlayPopupBuy.classList.add('modal-buy__show-overlay');
+  body.classList.add('page-body--no-scroll');
+  inputTelModal.focus();
+  setItemLocalStorage (inputTelModal, inputEmailModal);
+  document.addEventListener('keydown', onDocumentEscKeydown);
+};
 
-//закрытие окон "КУПИТЬ ТУР", "ФОРМА ОТПРАВЛЕНА УСПЕШНО" через overlay
+buttonsBuy.forEach((buttonBuy) => {
+  buttonBuy.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    openPopupBuy();
+  });
+});
+
+/*================ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН========================*/
+const closePopup = () => {
+  if (overlayPopupBuy.classList.contains('modal-buy__show-overlay')) {
+    overlayPopupBuy.classList.remove('modal-buy__show-overlay');
+    setItemLocalStorage (inputTelQuestions, inputEmailQuestions);
+  }
+  if (overlayPopupSuccess.classList.contains('modal-success__show-overlay')) {
+    overlayPopupSuccess.classList.remove('modal-success__show-overlay');
+  }
+  body.classList.remove('page-body--no-scroll')
+  document.removeEventListener('keydown', onDocumentEscKeydown);
+};
 
 const onOverlayClick = (evt) => {
   if (evt.target.matches('section')) { //останавливает погружение
@@ -232,6 +208,13 @@ const onOverlayClick = (evt) => {
   }
 };
 
+const onButtonCloseClick = (evt) => {
+  evt.preventDefault();
+  closePopup();
+}
+
+buttonPopupBuyClose.addEventListener('click', onButtonCloseClick);
+buttonPopupSuccessClose.addEventListener('click', onButtonCloseClick);
 overlayPopupBuy.addEventListener('click', onOverlayClick);
 overlayPopupSuccess.addEventListener('click', onOverlayClick);
 
@@ -241,9 +224,9 @@ formQuestions.addEventListener('submit', (evt)  => {
   if (!inputTelQuestions.value || !inputEmailQuestions.value) {
     evt.preventDefault();
   } else {
-    popupSuccess.classList.add('modal-success__show-card');
     overlayPopupSuccess.classList.add('modal-success__show-overlay');
     body.classList.add('page-body--no-scroll');
+    document.addEventListener('keydown', onDocumentEscKeydown);
 
     if(isStorageSupport) {
       localStorage.setItem('tel', inputTelQuestions.value);
@@ -256,18 +239,15 @@ formBuy.addEventListener('submit', (evt)  => {
   if (!inputTelModal.value || !inputEmailModal.value) {
     evt.preventDefault();
   } else {
-    popupSuccess.classList.add('modal-success__show-card');
     overlayPopupSuccess.classList.add('modal-success__show-overlay');
-    popupBuy.classList.remove('modal-buy__show-card');
-    overlayPopupBuy.classList.remove('modal-buy__show-overlay');
 
     if(isStorageSupport) {
       localStorage.setItem('tel', inputTelModal.value);
       localStorage.setItem('email',  inputEmailModal.value);
     }
+    overlayPopupBuy.classList.remove('modal-buy__show-overlay');
   }
 });
-
 
 /*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
 

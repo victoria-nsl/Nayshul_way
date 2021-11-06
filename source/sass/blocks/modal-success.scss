@@ -25,7 +25,6 @@
   transform: translate(-50%, -50%);
   z-index: 110;
 
-  display: none;
   width: 728px;
   margin: 0 auto;
   padding: 176px 164px;
@@ -41,10 +40,6 @@
     margin: 0 auto;
     padding: 150px 20px;
   }
-}
-
-.modal-success__show-card {
-  display: block;
 }
 
 .modal-success__message {

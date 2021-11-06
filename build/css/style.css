@@ -209,7 +209,8 @@ img {
 .page-header__phone-link {
   display: flex;
   align-items: center;
-  width: 230px; }
+  width: 230px;
+  transition-duration: 0.3s; }
   @media (max-width: 1023px) {
     .page-header__phone-link {
       display: none; } }
@@ -303,7 +304,8 @@ img {
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #141517; }
+  color: #141517;
+  transition-duration: 0.3s; }
 
 .main-navigation__link:hover {
   color: #fe7865; }
@@ -1530,7 +1532,8 @@ img {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: rgba(20, 21, 23, 0.5); }
+  color: rgba(20, 21, 23, 0.5);
+  transition-duration: 0.3s; }
 
 .next-trips__link:hover {
   color: #fe7865; }
@@ -1574,7 +1577,8 @@ img {
   font-size: 14px;
   line-height: 17px;
   text-decoration: underline;
-  color: #fe7865; }
+  color: #fe7865;
+  transition-duration: 0.3s; }
   @media (max-width: 767px) {
     .contacts__link--email {
       justify-content: center; } }
@@ -1597,7 +1601,8 @@ img {
   font-size: 16px;
   line-height: 32px;
   text-decoration: underline;
-  color: #fe7865; }
+  color: #fe7865;
+  transition-duration: 0.3s; }
   @media (max-width: 767px) {
     .contacts__link--phone {
       justify-content: center; } }
@@ -1670,7 +1675,6 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 60;
-  display: none;
   width: 728px;
   margin: 0 auto;
   padding: 72px 61px 89px 338px;
@@ -1693,9 +1697,6 @@ img {
       text-align: center;
       background-color: #ffffff;
       background-image: none; } }
-
-.modal-buy__show-card {
-  display: block; }
 
 .modal-buy__title {
   width: 237px;
@@ -1808,7 +1809,6 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 110;
-  display: none;
   width: 728px;
   margin: 0 auto;
   padding: 176px 164px;
@@ -1821,9 +1821,6 @@ img {
       width: 288px;
       margin: 0 auto;
       padding: 150px 20px; } }
-
-.modal-success__show-card {
-  display: block; }
 
 .modal-success__message {
   font-weight: 500;

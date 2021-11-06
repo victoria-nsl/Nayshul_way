@@ -52,6 +52,7 @@
   display: flex;
   align-items: center;
   width: 230px;
+  transition-duration: 0.3s;
 
   @media (max-width: $tablet-max-width) {
     display: none;
