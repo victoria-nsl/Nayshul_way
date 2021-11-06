@@ -1402,7 +1402,8 @@ img {
   font-size: 13px;
   line-height: 17px;
   color: #141517;
-  border: 1px solid rgba(44, 46, 63, 0.3); }
+  border: 1px solid rgba(44, 46, 63, 0.3);
+  border-radius: 0; }
   @media (max-width: 767px) {
     .questions__input {
       width: 100%; } }
@@ -1743,7 +1744,8 @@ img {
   font-size: 14px;
   line-height: 17px;
   color: #48494d;
-  border: 1px solid #d7d9df; }
+  border: 1px solid #d7d9df;
+  border-radius: 0; }
   @media (max-width: 767px) {
     .modal-buy__input {
       width: 288px; } }

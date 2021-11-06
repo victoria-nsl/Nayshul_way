@@ -31,8 +31,8 @@ const buttonPopupSuccessClose = popupSuccess.querySelector('.modal-success__clos
 const formBuy = popupBuy.querySelector('.modal-buy__form');
 const inputTelModal= formBuy.querySelector('.modal-buy__input--tel');
 const inputEmailModal= formBuy.querySelector('.modal-buy__input--email');
-const buttonModal= formQuestions.querySelector('.button--modal-buy');
-
+const buttonModal= formBuy.querySelector('.button--modal-buy');
+console.log()
 
 const buttonWatchTour = document.querySelector('.button--travel-europe');
 const buttonsBuy = document.querySelectorAll('[data-buy]');
@@ -327,5 +327,5 @@ buttonQuestions.addEventListener('click', ()  => {
 });
 
 buttonModal.addEventListener('click', ()  => {
-  showError(inputTelQuestions);
+  showError(inputTelModal);
 });
