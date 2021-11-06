@@ -1,7 +1,8 @@
 'use strict';
+const MASKED = '+7 (___) ___-__-__';
+
 const body = document.body;
 
-const overlayNavigationMain = document.querySelector('.page-header__overlay');
 const navigationMain = document.querySelector('.main-navigation');
 const navigationToggle = navigationMain.querySelector('.main-navigation__toggle');
 const linksNavigationMain = navigationMain.querySelectorAll('.main-navigation__link');
@@ -17,6 +18,7 @@ const pricesList = document.querySelector('.prices__list');
 const formQuestions = document.querySelector('.questions__form');
 const inputTelQuestions= formQuestions.querySelector('.questions__input--tel');
 const inputEmailQuestions= formQuestions.querySelector('.questions__input--email');
+const buttonQuestions= formQuestions.querySelector('.button--questions');
 
 const overlayPopupBuy = document.querySelector('.modal-buy');
 const popupBuy = overlayPopupBuy.querySelector('.modal-buy__card');
@@ -29,6 +31,7 @@ const buttonPopupSuccessClose = popupSuccess.querySelector('.modal-success__clos
 const formBuy = popupBuy.querySelector('.modal-buy__form');
 const inputTelModal= formBuy.querySelector('.modal-buy__input--tel');
 const inputEmailModal= formBuy.querySelector('.modal-buy__input--email');
+const buttonModal= formQuestions.querySelector('.button--modal-buy');
 
 
 const buttonWatchTour = document.querySelector('.button--travel-europe');
@@ -67,14 +70,12 @@ navigationMain.classList.remove('main-navigation--nojs');
 const closeMenu = () => {
   navigationMain.classList.add('main-navigation--closed');
   navigationMain.classList.remove('main-navigation--opened');
-  overlayNavigationMain.classList.remove('page-header__overlay--show');
   body.classList.remove('page-body--no-scroll');
 };
 
 const openMenu = () => {
   navigationMain.classList.remove('main-navigation--closed');
   navigationMain.classList.add('main-navigation--opened');
-  overlayNavigationMain.classList.add('page-header__overlay--show');
   body.classList.add('page-body--no-scroll');
 };
 
@@ -239,7 +240,7 @@ overlayPopupSuccess.addEventListener('click', onOverlayClick);
 /*=========ОТПРАВКА ФОРМ==============*/
 
 formQuestions.addEventListener('submit', (evt)  => {
-  if (!inputTelQuestions.value) {
+  if (!inputTelQuestions.value || !inputEmailQuestions.value) {
     evt.preventDefault();
   } else {
     popupSuccess.classList.add('modal-success__show-card');
@@ -254,7 +255,7 @@ formQuestions.addEventListener('submit', (evt)  => {
 });
 
 formBuy.addEventListener('submit', (evt)  => {
-  if (!inputTelModal.value) {
+  if (!inputTelModal.value || !inputEmailModal.value) {
     evt.preventDefault();
   } else {
     popupSuccess.classList.add('modal-success__show-card');
@@ -267,4 +268,64 @@ formBuy.addEventListener('submit', (evt)  => {
       localStorage.setItem('email',  inputEmailModal.value);
     }
   }
+});
+
+/*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
+
+const checkMask = (evt) => {
+
+  const keyCode = evt.key;
+  const template = MASKED;
+  const templateNumbersValue = template.replace(/\D/g, '');
+  const inputNumbersValue = evt.target.value.replace(/\D/g, '');
+
+  let i = 0;
+  let  newValue = template
+    .replace(/[_\d]/g, (a) => i < inputNumbersValue.length ? inputNumbersValue.charAt(i++) ||  templateNumbersValue.charAt(i) : a);
+
+  i = newValue.indexOf('_');
+
+  if (i !== -1) {
+    newValue = newValue.slice(0, i);
+  }
+
+  let reg = template.substring(0, evt.target.value.length)
+    .replace(/_+/g, (a) => `\\d{1,${ a.length}}`)
+    .replace(/[+()]/g, '\\$&'); reg = new RegExp(`^${reg}$`);
+
+  if (!reg.test(evt.target.value) || evt.target.value.length < 5 || keyCode > 47 && keyCode < 58) {
+    evt.target.value = newValue;
+  }
+
+  if (evt.type === 'blur' && evt.target.value.length < 5) {
+    evt.target.value = '';
+  }
+}
+
+inputTelQuestions.addEventListener('input', checkMask);
+inputTelQuestions.addEventListener('focus', checkMask);
+inputTelQuestions.addEventListener('blur', checkMask);
+
+inputTelModal.addEventListener('input', checkMask);
+inputTelModal.addEventListener('focus', checkMask);
+inputTelModal.addEventListener('blur', checkMask);
+
+/*======================ВАЛИДАЦИЯ=======================*/
+
+const showError = (inputTel) => {
+  if (inputTel.validity.tooShort) {
+    inputTel.setCustomValidity(' Введите 10 цифр номера');
+  } else if (inputTel.validity.valueMissing) {
+    inputTel.setCustomValidity('Обязательное поле');
+  } else {
+    inputTel.setCustomValidity('');
+  }
+};
+
+buttonQuestions.addEventListener('click', ()  => {
+  showError(inputTelQuestions);
+});
+
+buttonModal.addEventListener('click', ()  => {
+  showError(inputTelQuestions);
 });

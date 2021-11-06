@@ -82,24 +82,3 @@
 .page-header__phone-link:hover span {
   color: $scarlet;
 }
-
-.page-header__overlay {
-  @media (max-width: $tablet-max-width) {
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    display: none;
-
-    background-color: rgba($black, 0.5);
-  }
-}
-
-.page-header__overlay--show {
-  @media (max-width: $tablet-max-width) {
-    display: block;
-  }
-}

@@ -20,7 +20,6 @@
         </picture>
       </a>
       <div class="page-header__wrapper-navigation-phone">
-        <div class="page-header__overlay"></div>
         <nav class="main-navigation main-navigation--closed main-navigation--nojs page-header__main-navigation">
           <button class="main-navigation__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
@@ -596,12 +595,12 @@
                 <li class="questions__item">
                   <label class="visually-hidden" for="tel">Телефон</label>
                   <div class="questions__tel-wrapper">
-                    <input class="questions__input  questions__input--tel" id="tel" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="10" required >
+                    <input class="questions__input  questions__input--tel" id="tel" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="18" required>
                   </div>
                 </li>
                 <li class="questions__item">
                   <label class="visually-hidden" for="email"> email</label>
-                  <input class="questions__input questions__input--email" id="email" type="email" name="email" placeholder="E-mail">
+                  <input class="questions__input questions__input--email" id="email" type="email" name="email" placeholder="E-mail" required>
                 </li>
               </ul>
               <button class="button button--questions" type="submit">
@@ -707,13 +706,13 @@
             <li class="modal-buy__item">
               <label class="visually-hidden" for="telephone">Телефон</label>
               <div  class="modal-buy__tel-wrapper">
-                <input class="modal-buy__input modal-buy__input--tel" id="telephone" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="10" required >
+                <input class="modal-buy__input modal-buy__input--tel" id="telephone" type="tel" name="tel" placeholder="+7  Введите 10 цифр номера" minlength="18" required>
               </div>
 
             </li>
             <li class="modal-buy__item">
               <label class="visually-hidden" for="e-mail">email</label>
-              <input class="modal-buy__input  modal-buy__input--email" id="e-mail" type="email" name="email" placeholder="E-mail">
+              <input class="modal-buy__input  modal-buy__input--email" id="e-mail" type="email" name="email" placeholder="E-mail" required>
             </li>
           </ul>
           <button class="button button--modal-buy" type="submit">
