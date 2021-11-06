@@ -16,6 +16,9 @@
 
 .modal-buy__show-overlay {
   display: block;
+
+  animation-name: modal-appearance;
+  animation-duration: 1s;
 }
 
 .modal-buy__card {
@@ -165,4 +168,14 @@
 
 .modal-buy__close:hover {
   transform: scale(1.2);
+}
+
+@keyframes modal-appearance {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

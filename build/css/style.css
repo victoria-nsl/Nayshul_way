@@ -76,7 +76,8 @@ img {
   color: #ffffff;
   background-color: #fe7865;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 0.3s; }
   @media (max-width: 1023px) {
     .button {
       font-weight: 500;
@@ -84,7 +85,8 @@ img {
       line-height: 12px; } }
 
 .button:hover {
-  background-color: #f17d4b; }
+  background-color: #f17d4b;
+  transform: translateY(2px); }
 
 .button--travel-europe {
   display: flex;
@@ -209,8 +211,7 @@ img {
 .page-header__phone-link {
   display: flex;
   align-items: center;
-  width: 230px;
-  transition-duration: 0.3s; }
+  width: 230px; }
   @media (max-width: 1023px) {
     .page-header__phone-link {
       display: none; } }
@@ -223,14 +224,16 @@ img {
   stroke: #141517; }
 
 .page-header__phone-link:hover svg {
-  stroke: #fe7865; }
+  stroke: #fe7865;
+  transition-duration: 0.3s; }
 
 .page-header__phone-link span {
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
   color: #141517;
-  text-decoration: underline; }
+  text-decoration: underline;
+  transition-duration: 0.3s; }
 
 .page-header__phone-link:hover span {
   color: #fe7865; }
@@ -1667,7 +1670,9 @@ img {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .modal-buy__show-overlay {
-  display: block; }
+  display: block;
+  animation-name: modal-appearance;
+  animation-duration: 1s; }
 
 .modal-buy__card {
   position: absolute;
@@ -1786,6 +1791,12 @@ img {
 
 .modal-buy__close:hover {
   transform: scale(1.2); }
+
+@keyframes modal-appearance {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
 
 .modal-success {
   position: fixed;

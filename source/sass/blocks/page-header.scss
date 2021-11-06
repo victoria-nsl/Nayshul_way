@@ -52,7 +52,6 @@
   display: flex;
   align-items: center;
   width: 230px;
-  transition-duration: 0.3s;
 
   @media (max-width: $tablet-max-width) {
     display: none;
@@ -70,6 +69,7 @@
 
 .page-header__phone-link:hover svg {
   stroke: $scarlet;
+  transition-duration: 0.3s;
 }
 
 .page-header__phone-link span {
@@ -78,6 +78,8 @@
   line-height: 32px;
   color: $darkest;
   text-decoration: underline;
+
+  transition-duration: 0.3s;
 }
 
 .page-header__phone-link:hover span {
