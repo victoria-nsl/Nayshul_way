@@ -26,6 +26,10 @@
 .button:hover {
   background-color: $orange;
   transform: translateY(2px);
+
+  @media (max-width: $tablet-max-width) {
+    transform: translateY(0);
+  }
 }
 
 .button--travel-europe {
@@ -85,15 +89,14 @@
 
 .button--prices {
   width: 100%;
-  padding: 30px 68px 30px 69px;
+  padding: 30px;
   box-sizing: border-box;
 
   @media (max-width: $tablet-max-width) {
-    width: 288px;
+    width: 286px;
     padding: 19px 68px 19px 68px;
   }
 }
-
 
 .button--questions {
   width: 176px;

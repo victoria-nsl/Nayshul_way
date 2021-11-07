@@ -87,6 +87,9 @@ img {
 .button:hover {
   background-color: #f17d4b;
   transform: translateY(2px); }
+  @media (max-width: 1023px) {
+    .button:hover {
+      transform: translateY(0); } }
 
 .button--travel-europe {
   display: flex;
@@ -133,11 +136,11 @@ img {
 
 .button--prices {
   width: 100%;
-  padding: 30px 68px 30px 69px;
+  padding: 30px;
   box-sizing: border-box; }
   @media (max-width: 1023px) {
     .button--prices {
-      width: 288px;
+      width: 286px;
       padding: 19px 68px 19px 68px; } }
 
 .button--questions {
@@ -1044,7 +1047,10 @@ img {
       width: 288px;
       margin-right: 25px;
       margin-left: 25px;
-      padding: 30px 0 0 0; } }
+      padding: 30px 0 0 0;
+      border-radius: 0;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px; } }
   @media (max-width: 767px) {
     .prices__item {
       margin: 0 auto;
@@ -1153,28 +1159,9 @@ img {
       margin-left: 18px;
       text-align: start; } }
 
-@media (max-width: 1023px) {
-  .prices__button {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px; } }
-
 .prices__item:hover {
-  padding: 38px 28px 28px 28px;
-  border: 3px solid #fe7865; }
-  @media (max-width: 1023px) {
-    .prices__item:hover {
-      padding: 28px 0 0 0; } }
-
-@media (max-width: 1023px) {
-  .prices__item:hover .prices__item-service,
-  .prices__item:hover .prices__text-package,
-  .prices__item:hover .prices__title-package {
-    padding: 0 18px 0 18px; } }
-
-@media (max-width: 1023px) {
-  .prices__item:hover .prices__button {
-    width: 284px;
-    padding: 19px 66px 17px 66px; } }
+  border: 1px solid #fe7865;
+  outline: 2px solid #fe7865; }
 
 .prices__item:hover .prices__title-package {
   color: #fe7865; }
