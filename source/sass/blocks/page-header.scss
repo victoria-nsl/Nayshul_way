@@ -37,6 +37,11 @@
   }
 }
 
+.page-header__logo-link[href]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .page-header__logo-link img {
   width: 57px;
   height: 22px;

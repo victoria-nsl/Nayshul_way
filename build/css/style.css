@@ -200,6 +200,10 @@ img {
   .page-header__logo-link {
     margin-left: 16px; } }
 
+.page-header__logo-link[href]:hover {
+  cursor: pointer;
+  opacity: 0.8; }
+
 .page-header__logo-link img {
   width: 57px;
   height: 22px; }
@@ -776,7 +780,7 @@ img {
   color: rgba(44, 46, 63, 0.3); }
 
 .countries__slider-button:hover {
-  color: rgba(44, 46, 63, 0.5); }
+  color: #fe7865; }
 
 .countries__slider-list {
   margin: 0;
@@ -1690,6 +1694,17 @@ img {
 .modal-buy__show-overlay {
   display: block; }
 
+.modal-buy--no-js {
+  position: static;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  height: auto;
+  box-sizing: border-box;
+  overflow: visible;
+  background-color: rgba(0, 0, 0, 0.2); }
+
 .modal-buy__card {
   position: absolute;
   top: 50%;
@@ -1720,6 +1735,12 @@ img {
       text-align: center;
       background-color: #ffffff;
       background-image: none; } }
+
+.modal-buy--no-js .modal-buy__card {
+  position: static;
+  display: block;
+  animation: none;
+  transform: translate(0, 0); }
 
 .modal-buy__title {
   width: 237px;
@@ -1806,6 +1827,9 @@ img {
   background-repeat: no-repeat;
   border: none;
   cursor: pointer; }
+
+.modal-buy--no-js .modal-buy__close {
+  display: none; }
 
 .modal-buy__close:hover {
   transform: scale(1.2); }

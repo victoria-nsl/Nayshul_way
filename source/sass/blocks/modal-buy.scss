@@ -18,6 +18,19 @@
   display: block;
 }
 
+.modal-buy--no-js {
+  position: static;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  height: auto;
+  box-sizing: border-box;
+  overflow: visible;
+
+  background-color: rgba($black, 0.2);
+}
+
 .modal-buy__card {
   position: absolute;
   top: 50%;
@@ -57,6 +70,13 @@
     background-color: $white;
     background-image: none;
   }
+}
+
+.modal-buy--no-js .modal-buy__card {
+  position: static;
+  display: block;
+  animation: none;
+  transform: translate(0, 0);
 }
 
 .modal-buy__title {
@@ -164,6 +184,10 @@
   border: none;
 
   cursor: pointer;
+}
+
+.modal-buy--no-js .modal-buy__close {
+  display: none;
 }
 
 .modal-buy__close:hover {
