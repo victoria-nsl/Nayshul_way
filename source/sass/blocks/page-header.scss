@@ -42,6 +42,10 @@
   opacity: 0.8;
 }
 
+.page-header__logo-link[href]:focus {
+  outline: 2px solid $black-light;
+}
+
 .page-header__logo-link img {
   width: 57px;
   height: 22px;
@@ -89,4 +93,8 @@
 
 .page-header__phone-link:hover span {
   color: $scarlet;
+}
+
+.page-header__phone-link:focus {
+  outline: 2px solid $black-light;
 }

@@ -32,6 +32,10 @@
   }
 }
 
+.button:focus {
+  outline: 2px solid $black-light;
+}
+
 .button--travel-europe {
   display: flex;
   align-items: center;

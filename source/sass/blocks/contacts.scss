@@ -104,7 +104,10 @@
   }
 }
 
-
 .contacts__link:hover {
   color: $darkest;
+}
+
+.contacts__link:focus {
+  outline: 2px solid $black-light;
 }

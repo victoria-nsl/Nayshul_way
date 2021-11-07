@@ -80,3 +80,7 @@
 .next-trips__link:hover {
   color: $scarlet;
 }
+
+.next-trips__link:focus {
+  outline: 2px solid $black-light;
+}

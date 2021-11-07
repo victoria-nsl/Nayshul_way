@@ -217,28 +217,8 @@
 
 //ховеры
 .prices__item:hover {
-  //padding: 38px 28px 28px 28px;
   border: 1px solid $scarlet;
   outline: 2px solid $scarlet;
-
-  @media (max-width: $tablet-max-width) {
-    //padding: 28px 0 0 0;
-  }
-}
-
-.prices__item:hover .prices__item-service,
-.prices__item:hover .prices__text-package,
-.prices__item:hover .prices__title-package {
-  @media (max-width: $tablet-max-width) {
-    //padding: 0 18px 0 18px;
-  }
-}
-
-.prices__item:hover .prices__button {
-  @media (max-width: $tablet-max-width) {
-    //width: 284px;
-    //padding: 19px 66px 17px 66px;
-  }
 }
 
 .prices__item:hover .prices__title-package {
@@ -386,4 +366,8 @@
   @media (max-width: $tablet-max-width) {
     color: $black;
   }
+}
+
+.prices__phone-link-info:focus {
+  outline: 2px solid $black-light;
 }

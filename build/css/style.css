@@ -91,6 +91,9 @@ img {
     .button:hover {
       transform: translateY(0); } }
 
+.button:focus {
+  outline: 2px solid #48494d; }
+
 .button--travel-europe {
   display: flex;
   align-items: center;
@@ -207,6 +210,9 @@ img {
   cursor: pointer;
   opacity: 0.8; }
 
+.page-header__logo-link[href]:focus {
+  outline: 2px solid #48494d; }
+
 .page-header__logo-link img {
   width: 57px;
   height: 22px; }
@@ -244,6 +250,9 @@ img {
 
 .page-header__phone-link:hover span {
   color: #fe7865; }
+
+.page-header__phone-link:focus {
+  outline: 2px solid #48494d; }
 
 @media (max-width: 1023px) {
   .main-navigation--opened {
@@ -319,6 +328,9 @@ img {
 
 .main-navigation__link:hover {
   color: #fe7865; }
+
+.main-navigation__item a[href*="#"]:focus {
+  outline: 2px solid #48494d; }
 
 @media (max-width: 1023px) {
   .main-navigation--opened .main-navigation__link {
@@ -702,6 +714,9 @@ img {
   align-items: center;
   justify-content: center; }
 
+.places-visit__link:focus {
+  outline: 2px solid #48494d; }
+
 .places-visit__text {
   width: 76%;
   padding: 30px 25px;
@@ -784,6 +799,9 @@ img {
 
 .countries__slider-button:hover {
   color: #fe7865; }
+
+.countries__slider-button:focus {
+  outline: 2px solid #48494d; }
 
 .countries__slider-list {
   margin: 0;
@@ -1276,6 +1294,9 @@ img {
     .prices__phone-link-info:hover .prices__phone-link-info-span {
       color: #000000; } }
 
+.prices__phone-link-info:focus {
+  outline: 2px solid #48494d; }
+
 .questions {
   width: 95.5%;
   max-width: 1170px;
@@ -1407,7 +1428,8 @@ img {
   line-height: 17px;
   color: #141517;
   border: 1px solid rgba(44, 46, 63, 0.3);
-  border-radius: 0; }
+  border-radius: 0;
+  cursor: pointer; }
   .questions__input::placeholder {
     color: #141517;
     opacity: 0.7; }
@@ -1420,6 +1442,9 @@ img {
 
 .questions__input:hover {
   border: 1px solid rgba(241, 125, 75, 0.3); }
+
+.questions__input:focus {
+  outline: 2px solid #48494d; }
 
 .questions__tel-wrapper {
   position: relative; }
@@ -1548,6 +1573,9 @@ img {
 .next-trips__link:hover {
   color: #fe7865; }
 
+.next-trips__link:focus {
+  outline: 2px solid #48494d; }
+
 .contacts {
   width: 267px; }
   @media (max-width: 1023px) {
@@ -1631,6 +1659,9 @@ img {
 
 .contacts__link:hover {
   color: #141517; }
+
+.contacts__link:focus {
+  outline: 2px solid #48494d; }
 
 .corporate-travelers {
   padding-left: 4.7%;

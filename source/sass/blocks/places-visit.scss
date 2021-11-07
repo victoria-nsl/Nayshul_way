@@ -221,6 +221,10 @@
   justify-content: center;
 }
 
+.places-visit__link:focus {
+  outline: 2px solid $black-light;
+}
+
 .places-visit__text {
   width: 76%;
   padding: 30px 25px;

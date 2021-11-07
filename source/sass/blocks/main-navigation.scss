@@ -95,6 +95,10 @@
   color: $scarlet;
 }
 
+.main-navigation__item a[href*="#"]:focus {
+  outline: 2px solid $black-light;
+}
+
 .main-navigation--opened .main-navigation__link {
   @media (max-width: $tablet-max-width) {
     position: relative;

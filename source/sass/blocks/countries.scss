@@ -87,6 +87,10 @@
   color: $scarlet;
 }
 
+.countries__slider-button:focus {
+  outline: 2px solid $black-light;
+}
+
 //Слайды
 
 .countries__slider-list {
