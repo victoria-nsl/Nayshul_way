@@ -87,8 +87,6 @@
   }
 
   /*==========ПЕРЕКЛЮЧЕНИЕ СЛАЙДОВ /ТАБОВ/==============*/
-
-
   const changeSlide = (imageSlide, buttonSlide) => {
     imagesSlide.forEach((slide) => {
       if (slide.classList.contains('countries__slider-item--current')) {
