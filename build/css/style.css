@@ -1072,7 +1072,7 @@ img {
   @media (max-width: 767px) {
     .prices__item {
       margin: 0 auto;
-      margin-bottom: 30px; } }
+      margin-bottom: 28px; } }
 
 .prices__title-package {
   display: flex;
@@ -1138,16 +1138,20 @@ img {
       right: 20px;
       width: 248px; } }
 
+.prices__wrapper-list-services {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; }
+
 .prices__list-services {
   margin: 0;
   padding: 0;
   list-style: none;
-  flex-grow: 1;
   margin-bottom: 28px; }
 
 @media (max-width: 767px) {
   .prices__list-services--complex {
-    margin-bottom: 35px; } }
+    margin-bottom: 44px; } }
 
 .prices__item-service {
   display: flex;
@@ -1165,17 +1169,30 @@ img {
     .prices__item-service:not(:last-child) {
       margin-bottom: 10px; } }
 
+.prices__list-services--complex .prices__item-service:first-child {
+  margin-bottom: 6px; }
+
 .prices__service-check {
+  width: 14px;
+  height: 12px;
   margin-top: 8px;
   fill: #fe7865; }
+  @media (max-width: 1023px) {
+    .prices__service-check {
+      width: 20px;
+      height: 20px;
+      margin-top: 5px; } }
 
 .prices__item-service span {
   width: 280px;
   margin-left: 15px; }
   @media (max-width: 1023px) {
     .prices__item-service span {
-      margin-left: 18px;
+      margin-left: 14px;
       text-align: start; } }
+
+.prices__button {
+  margin-top: auto; }
 
 .prices__item:hover {
   border: 1px solid #fe7865;

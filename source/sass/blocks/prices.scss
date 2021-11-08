@@ -75,7 +75,7 @@
 
   @media (max-width: $mobile-max-width) {
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 }
 
@@ -163,16 +163,20 @@
   }
 }
 
+.prices__wrapper-list-services {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .prices__list-services {
   @include reset-style-list;
-
-  flex-grow: 1;
   margin-bottom: 28px;
 }
 
 .prices__list-services--complex {
   @media (max-width: $mobile-max-width) {
-    margin-bottom: 35px;
+    margin-bottom: 44px;
   }
 }
 
@@ -197,10 +201,23 @@
   }
 }
 
+.prices__list-services--complex .prices__item-service:first-child {
+  margin-bottom: 6px;
+}
+
+
 .prices__service-check {
+  width: 14px;
+  height: 12px;
   margin-top: 8px;
 
   fill: $scarlet;
+
+  @media (max-width: $tablet-max-width) {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+  }
 }
 
 .prices__item-service span {
@@ -208,13 +225,15 @@
   margin-left: 15px;
 
   @media (max-width: $tablet-max-width) {
-    margin-left: 18px;
+    margin-left: 14px;
 
     text-align: start;
   }
 }
 
-
+.prices__button {
+  margin-top: auto;
+}
 //ховеры
 .prices__item:hover {
   border: 1px solid $scarlet;
