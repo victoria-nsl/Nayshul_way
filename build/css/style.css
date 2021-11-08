@@ -658,7 +658,8 @@ img {
 .places-visit__link {
   position: relative;
   display: flex;
-  cursor: pointer; }
+  cursor: pointer;
+  overflow: hidden; }
 
 .places-visit__image-block {
   position: relative;
