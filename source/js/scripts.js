@@ -251,7 +251,6 @@
     });
   }
 
-
   /*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
   const getInputNumbersValueCopy = (input) => input.value.replace(/\D/g, '');
 
