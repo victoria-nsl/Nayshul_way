@@ -437,6 +437,9 @@ img {
     .page-main__wrapper-countries-prices {
       background-image: none; } }
 
+.page-main__input-error {
+  box-shadow: 0 0 10px #ff0000; }
+
 .travel-europe {
   min-height: 860px;
   margin-bottom: 200px; }
