@@ -1,5 +1,5 @@
 (function () {
-  const MASKED = '+7 (___) ___-__-__';
+  const FIRST_SYMBOLS ='+7 ';
 
   const body = document.body;
 
@@ -160,11 +160,11 @@
   const closePopup = () => {
     if (overlayPopupBuy.classList.contains('modal-buy__show-overlay')) {
       overlayPopupBuy.classList.remove('modal-buy__show-overlay');
-      setItemLocalStorage (inputTelQuestions, inputEmailQuestions);
     }
     if (overlayPopupSuccess.classList.contains('modal-success__show-overlay')) {
       overlayPopupSuccess.classList.remove('modal-success__show-overlay');
     }
+    setItemLocalStorage (inputTelQuestions, inputEmailQuestions);
     body.classList.remove('page-body--no-scroll');
   };
 
@@ -253,46 +253,62 @@
 
 
   /*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
-  const checkMask = (evt) => {
+  const getInputNumbersValueCopy = (input) => input.value.replace(/\D/g, '');
 
-    const keyCode = evt.key;
-    const template = MASKED;
-    const templateNumbersValue = template.replace(/\D/g, '');
-    const inputNumbersValue = evt.target.value.replace(/\D/g, '');
+  const onPhoneFocus = (evt) =>  evt.target.value = FIRST_SYMBOLS;
 
-    let i = 0;
-    let  newValue = template
-      .replace(/[_\d]/g, (a) => i < inputNumbersValue.length ? inputNumbersValue.charAt(i++) ||  templateNumbersValue.charAt(i) : a);
-
-    i = newValue.indexOf('_');
-
-    if (i !== -1) {
-      newValue = newValue.slice(0, i);
-    }
-
-    let reg = template.substring(0, evt.target.value.length)
-      .replace(/_+/g, (a) => `\\d{1,${ a.length}}`)
-      .replace(/[+()]/g, '\\$&'); reg = new RegExp(`^${reg}$`);
-
-    if (!reg.test(evt.target.value) || evt.target.value.length < 5 || keyCode > 47 && keyCode < 58) {
-      evt.target.value = newValue;
-    }
-
-    if (evt.type === 'blur' && evt.target.value.length < 5) {
+  const onPhoneBlur = (evt) =>  {
+    if (evt.target.value.length < 4 ) {
       evt.target.value = '';
     }
   };
 
+  const onPhoneInput = (evt) => {
+    const input = evt.target;
+    const inputNumbersValue = getInputNumbersValueCopy(input);
+    let  formattedInputValue  = FIRST_SYMBOLS;
+    if (!inputNumbersValue) {
+      return input.value = '';
+    }
+
+    const selectionStart = input.selectionStart;
+
+    if (input.value.length !== selectionStart) {
+      if (evt.data && /\D/g.test(evt.data)) {
+        input.value = inputNumbersValue;
+      }
+      return;
+    }
+
+    if (inputNumbersValue.length > 1) {
+      formattedInputValue +=  `(${inputNumbersValue.substring(1, 4)}`;
+    }
+
+    if (inputNumbersValue.length >= 5) {
+      formattedInputValue += `) ${inputNumbersValue.substring(4, 7)}`;
+    }
+
+    if (inputNumbersValue.length >= 8) {
+      formattedInputValue += `-${inputNumbersValue.substring(7, 9)}`;
+    }
+
+    if (inputNumbersValue.length >= 10) {
+      formattedInputValue += `-${inputNumbersValue.substring(9, 11)}`;
+    }
+
+    input.value = formattedInputValue;
+  };
+
   if (formQuestions) {
-    inputTelQuestions.addEventListener('input', checkMask);
-    inputTelQuestions.addEventListener('focus', checkMask);
-    inputTelQuestions.addEventListener('blur', checkMask);
+    inputTelQuestions.addEventListener('input', onPhoneInput);
+    inputTelQuestions.addEventListener('focus', onPhoneFocus);
+    inputTelQuestions.addEventListener('blur', onPhoneBlur);
   }
 
   if (formBuy) {
-    inputTelModal.addEventListener('input', checkMask);
-    inputTelModal.addEventListener('focus', checkMask);
-    inputTelModal.addEventListener('blur', checkMask);
+    inputTelModal.addEventListener('input', onPhoneInput);
+    inputTelModal.addEventListener('focus', onPhoneFocus);
+    inputTelModal.addEventListener('blur', onPhoneBlur);
   }
 
   /*======================ВАЛИДАЦИЯ=======================*/
