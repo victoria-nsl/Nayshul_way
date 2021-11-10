@@ -282,9 +282,13 @@
   }
 
   /*======================МАСКА ДЛЯ ТЕЛЕФОНА=======================*/
-  const getInputNumbersValueCopy = (input) => input.value.replace(/\D/g, '');
+  const getInputNumbersValue = (input) => input.value.replace(/\D/g, '');
 
-  const onPhoneFocus = (evt) =>  evt.target.value = FIRST_SYMBOLS;
+  const onPhoneFocus = (evt) =>  {
+    if (!evt.target.value) {
+      evt.target.value = FIRST_SYMBOLS;
+    }
+  };
 
   const onPhoneBlur = (evt) =>  {
     if (evt.target.value.length < 4 ) {
@@ -294,7 +298,7 @@
 
   const onPhoneInput = (evt) => {
     const input = evt.target;
-    const inputNumbersValue = getInputNumbersValueCopy(input);
+    const inputNumbersValue = getInputNumbersValue(input);
     let  formattedInputValue  = FIRST_SYMBOLS;
     if (!inputNumbersValue) {
       return input.value = '';
