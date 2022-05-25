@@ -438,7 +438,7 @@ img {
       background-image: none; } }
 
 .page-main__input-error {
-  box-shadow: 0 0 10px #ff0000; }
+  box-shadow: 0 0 2px 2px #ff0000; }
 
 .travel-europe {
   min-height: 860px;
